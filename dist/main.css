@@ -1,4 +1,11 @@
 body {
-  background-color: ivory; }
+  background-color: ivory;
+  margin: 0;
+  padding: 0; }
+
+#score {
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 /*# sourceMappingURL=main.css.map */

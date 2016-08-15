@@ -13,47 +13,24 @@ var spawnRate = 1500;
 var spawnRateOfDescent = 1;
 var lastSpawn = -1;
 var objects = [];
-var invaders = [];
-
 var startTime = Date.now();
+canvas.width= $(window).width();
+canvas.height= $(window).height();
 var gameSize = {x: canvas.width,y: canvas.height};
-
 var score = 0;
 
-var blockData = [
-    ['width', 10],
-    ['height', 10],
-    ['ySpeed', 2]
-
-];
 
 
-// animate();
-// x
+// width="1100" height="610"
 
-function spawnRandomObject() {
-  var object = {
-        x: Math.random() * (canvas.width - 30) + 15,
-        y: spawnLineY,
-    }
-    objects.push(object);
-
-}
-
-
-
-
-// console.log(checkCollision,'hit');
 
 
 
 
 function Game() {
     var gameSize = {x: canvas.width, y: canvas.height};
-    // this.bodies =objects().concat(new Player(this, gameSize));
-    this.bodies=[new Player(this,gameSize)];
-
-
+    this.bodies =objects.concat(new Player(this, gameSize));
+    // this.bodies=[new Player(this,gameSize)];
 
     var self = this;
     var tick = function() {
@@ -61,39 +38,46 @@ function Game() {
         self.draw(screen, gameSize);
 
 
+        function spawnRandomObject() {
+           var size= {x: 15,y: 0};
+           var x= Math.random() * (canvas.width - 30) + 15;
+
+          var object = {
+                x: x,
+                y: spawnLineY,
+               center: {x: x + 7.5, y: 50 - size.x},
+                size: {x: 15,y: 0},
+
+            }
+
+
+            objects.push(object);
+        }
+
+        var time = Date.now();
+       if (time > (lastSpawn + spawnRate)) {
+           lastSpawn = time;
+           spawnRandomObject();
+       }
 
 
 
-          var time = Date.now();
-         if (time > (lastSpawn + spawnRate)) {
-             lastSpawn = time;
-             spawnRandomObject();
-         }
+       for (var i = 0; i < objects.length; i++) {
+           var object = objects[i];
+           var size= {x: 15,y: 0};
+          //  var center=  {x: 50/ 2, y: 50 - size.x};
 
+           object.y += spawnRateOfDescent;
+           ctx.beginPath();
+           ctx.arc(object.x, object.y, size.x, size.y, Math.PI * 2);
+           ctx.fill();
+       }
 
-
-         for (var i = 0; i < objects.length; i++) {
-             var object = objects[i];
-             object.y += spawnRateOfDescent;
-             ctx.beginPath();
-             ctx.arc(object.x, object.y, 8, 0, Math.PI * 2);
-
-
-             ctx.fill();
-         }
 
         requestAnimationFrame(tick);
 
     };
     tick();
-    // function checkCollision(){
-    //   console.log('running');
-    //   if(object.x < drawRect + drawRect.width &&
-    //       object.x + object.width > drawRect &&
-    //       object.y < drawRect + drawRect.height &&
-    //       object.height + object.y > drawRect.y);
-    // }
-
 };
 
 
@@ -101,29 +85,46 @@ function Game() {
 
 Game.prototype = {
     update: function() {
-      // var bodies = this.bodies;
-      // var notCollidingWithAnything = function (b1){
-      //   return bodies.filter(function(b2) {return colliding(b1, b2); }).length ===0;
-      // };
-      //
-      // this.bodies= this.bodies.filter(notCollidingWithAnything);
+
+ $("#score").text(score);
 
 
       function hitTestPoint (b1,b2){
-        if ((b1.center.x <= b2.center.x && b1.center.x + b1.size.x >= b2.center.x) &&
-      (b1.size.x <= b2.size.y && b1.size.y+b1.center.y >= b2.center.y))
-      return true;
-      else
-      return false;
+        // console.clear()
+        // console.log(b1.center.y)
+        // console.log(b2.y)
+
+        if (b2.center.x <= b1.center.x - 30 || b2.center.x >= b1.center.x + 30 ){
+          return false;
+        } else if (b1.center.y >= b2.y - 15 && b1.center.y <= b2.y + 15) {
+          return true;
+        } else {
+          return false;
+        }
       }
-      console.log(true);
+
+
+      for (var i = 0; i < objects.length; i++){
+        if (objects[i]) {
+           if(hitTestPoint(this.bodies[0],objects[i])) {
+             score += 100
+              $("#score").text(score);
+           }
+        }
+
+      // console.log( hitTestPoint(this.bodies[0],objects[0]));
+      }
+
+//
+// if (objects[0]) {
+//    console.log(hitTestPoint(this.bodies[0],objects[0]));
+// }
 
 
 
-// console.log('colliding');
+
         for (var i = 0; i < this.bodies.length; i++) {
         this.bodies[i].update();
-
         }
     },
     draw: function(screen, gameSize) {
@@ -145,12 +146,20 @@ var Player = function(game, gameSize) {
 
 
 Player.prototype = {
+  // var this.width = canvas.width;
+  // var this.height = canvas.height;
+
     update: function() {
         if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT)) {
-            this.center.x -= 2;
+            this.center.x = Math.max(25, this.center.x  - 15);
+
         } else if (this.keyboarder.isDown(this.keyboarder.KEYS.RIGHT)) {
-            this.center.x += 2;
+          this.center.x = Math.min($(window).width() -25, this.center.x + 15);
+
         }
+
+
+
     }
 };
 
@@ -197,7 +206,6 @@ var colliding= function(b1, b2){
             b1.center.x - b1.size.x / 2 > b2.center.x + b2.size.x / 2 ||
             b1.center.y - b1.size.y / 2 > b2.center.y+  b2.size.y / 2 );
 };
-
 
 
 
