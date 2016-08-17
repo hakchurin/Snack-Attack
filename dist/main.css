@@ -5,7 +5,21 @@ body {
 
 #score {
   position: absolute;
-  top: 0;
   left: 0; }
+
+p#lives {
+  margin-top: 0rem; }
+
+.FinishScreen {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+  height: 450px;
+  border: 2px solid black;
+  background-color: #8db370; }
+
+#header {
+  height: 135px;
+  border: 2px solid; }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,20 @@
 	</head>
 	<body>
 
-		<p id="score">Current score: <span></span></p>
+		<div id ="header">
+			<p id="timer"> </p>
+		<p id="score">Current score: </p>
+		<p id="lives"></p>
+	</div>
+
+		<div class="FinishScreen" style="display:none">
+							<h1>Game Over</h1>
+							<p>Your score was: </p>
+							<button id="restartBtn" value="Start"> start</button>
+						</div>
+
+
+
 
 		<canvas id="screen"  />
 

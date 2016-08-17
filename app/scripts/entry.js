@@ -15,19 +15,18 @@ var lastSpawn = -1;
 var objects = [];
 var startTime = Date.now();
 canvas.width= $(window).width();
-canvas.height= $(window).height();
+canvas.height= $(window).height() - 100;
 var gameSize = {x: canvas.width,y: canvas.height};
 var score = 0;
-
-
-
-// width="1100" height="610"
-
+var lives = 3;
+var running = setInterval( 10);
+var input = 60;
 
 
 
 
 function Game() {
+  console.log(this);
     var gameSize = {x: canvas.width, y: canvas.height};
     this.bodies =objects.concat(new Player(this, gameSize));
     // this.bodies=[new Player(this,gameSize)];
@@ -36,6 +35,11 @@ function Game() {
     var tick = function() {
         self.update();
         self.draw(screen, gameSize);
+
+
+
+;
+
 
 
         function spawnRandomObject() {
@@ -49,10 +53,9 @@ function Game() {
                 size: {x: 15,y: 0},
 
             }
-
-
             objects.push(object);
         }
+
 
         var time = Date.now();
        if (time > (lastSpawn + spawnRate)) {
@@ -62,19 +65,45 @@ function Game() {
 
 
 
+
+
+
+
        for (var i = 0; i < objects.length; i++) {
            var object = objects[i];
            var size= {x: 15,y: 0};
-          //  var center=  {x: 50/ 2, y: 50 - size.x};
-
            object.y += spawnRateOfDescent;
            ctx.beginPath();
            ctx.arc(object.x, object.y, size.x, size.y, Math.PI * 2);
            ctx.fill();
+
        }
 
 
-        requestAnimationFrame(tick);
+       function endGame(){
+              $("#screen").hide();
+              $("#score").text( score) ;
+              $(".FinishScreen").show();
+              self.update();
+          }
+
+       if (lives === 0 || input === 0 ){
+console.log(input, lives);
+         cancelAnimationFrame(tick);
+         endGame();
+
+       }
+
+       $('#restartBtn').on('click', function(){
+         $(".FinishScreen").hide();
+         $("#screen").show();
+         window.location.reload(true);
+
+       })
+
+        if (lives !==0 && input   !== 0) {
+          requestAnimationFrame(tick);
+        }
 
     };
     tick();
@@ -86,46 +115,46 @@ function Game() {
 Game.prototype = {
     update: function() {
 
- $("#score").text(score);
 
+
+
+
+
+ $("#score").text("Current Score: " + score);
+
+ $("#lives").text("Lives: " + lives);
 
       function hitTestPoint (b1,b2){
-        // console.clear()
-        // console.log(b1.center.y)
-        // console.log(b2.y)
-
-        if (b2.center.x <= b1.center.x - 30 || b2.center.x >= b1.center.x + 30 ){
+        if (b2.center.x <= b1.center.x - 50 || b2.center.x >= b1.center.x + 55 ){
           return false;
         } else if (b1.center.y >= b2.y - 15 && b1.center.y <= b2.y + 15) {
+
           return true;
         } else {
           return false;
         }
       }
 
+var newObject= objects.filter((current,i,arr) => {
+        if (hitTestPoint(this.bodies[0], current)){
+           score += 100;
+           return false;
+         } else if (current.y === $(window).height()){
+             lives -= 1;
+           return false;
 
-      for (var i = 0; i < objects.length; i++){
-        if (objects[i]) {
-           if(hitTestPoint(this.bodies[0],objects[i])) {
-             score += 100
-              $("#score").text(score);
-           }
+        } else {
+          return true
         }
+      })
 
-      // console.log( hitTestPoint(this.bodies[0],objects[0]));
-      }
-
-//
-// if (objects[0]) {
-//    console.log(hitTestPoint(this.bodies[0],objects[0]));
-// }
-
-
-
-
-        for (var i = 0; i < this.bodies.length; i++) {
+objects = newObject;
+      for (var i = 0; i < this.bodies.length; i++) {
         this.bodies[i].update();
         }
+
+
+
     },
     draw: function(screen, gameSize) {
         ctx.clearRect(0, 0, gameSize.x, gameSize.y);
@@ -138,16 +167,15 @@ Game.prototype = {
 
 var Player = function(game, gameSize) {
     this.game = game;
-    this.size = {x: 50,y: 20};
-    this.center = {x: gameSize.x / 2, y: gameSize.y - this.size.x};
+    this.size = {x: 100,y: 20};
+    this.center = {x: gameSize.x , y: gameSize.y - this.size.x};
     this.keyboarder = new Keyboarder();
 
 };
 
 
 Player.prototype = {
-  // var this.width = canvas.width;
-  // var this.height = canvas.height;
+
 
     update: function() {
         if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT)) {
@@ -195,7 +223,7 @@ var Keyboarder = function() {
     };
 }
 
-//
+
 window.onload = function() {
     new Game("screen");
 };
@@ -206,6 +234,39 @@ var colliding= function(b1, b2){
             b1.center.x - b1.size.x / 2 > b2.center.x + b2.size.x / 2 ||
             b1.center.y - b1.size.y / 2 > b2.center.y+  b2.size.y / 2 );
 };
+
+      $(document).ready(function() {
+          function calculateTime(timer){
+              var timer = timer;
+              var mins = Math.floor(timer/60);
+              var secs = timer % 60;
+              var time = (mins < 10 ? "0" : "" ) + mins + ":" + (secs < 10 ? "0" : "" ) + secs;
+              return time;
+          };
+        setInterval(function(){
+            var data = calculateTime(input)
+            if(input  && lives > 0){
+            $("#timer").text(data);
+             input--;
+            }
+            else{
+            $("#timer").text("LOST!")
+            }
+          }, 1000);
+      });
+
+      // window.setInterval(function(){
+      //   spawnRateOfDescent += 0.5
+      //   spawnRate -= spawnRate / 100 * 20;
+      // },5000);
+
+
+
+
+
+
+
+
 
 
 
@@ -327,3 +388,32 @@ var colliding= function(b1, b2){
 // //         ctx.fill();
 // //     }
 // //
+
+
+
+// // console.log(objects);
+// var remove = objects.filter((current,i,arr) =>{
+//   if(object.y === $(window).height()){
+//      return remove;
+//   }
+// })
+//
+// remove=objects;
+// console.log(remove);
+
+      // for (var i = 0; i < objects.length; i++){
+      //   if (objects[i]) {
+      //      if(hitTestPoint(this.bodies[0],objects[i])) {
+      //        score += 100
+      //         $("#score").text(score);
+      //
+      //      }
+      //   }
+      //
+      // // console.log( hitTestPoint(this.bodies[0],objects[0]));
+      // }
+
+//
+// if (objects[0]) {
+//    console.log(hitTestPoint(this.bodies[0],objects[0]));
+// }
