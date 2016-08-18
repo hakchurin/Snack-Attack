@@ -19,15 +19,39 @@ p#lives{
 }
 
 .FinishScreen {
-     margin: 0 auto;
-     text-align:center;
-     width:600px;
-     height: 450px;
-     border: 2px solid black;
-     background-color:#8db370;
+  margin: 0 auto;
+ text-align: center;
+ width: 600px;
+ height: 450px;
+ border: 2px solid black;
+ background-color: #8db370;
+ margin-top: -38rem;
+ position: absolute;
+ margin-left: 15rem;
  }
 
 #header{
   height: 135px;
       border: 2px solid;
 }
+
+#footer{
+  border: 2px solid;
+      height: 6rem;
+      margin-top: 35rem;
+      width: 100%;
+      position: absolute;
+}
+
+.StartScreen {
+  margin: 0 auto;
+ text-align: center;
+ width: 600px;
+ height: 450px;
+ border: 2px solid black;
+ background-color: #8db370;
+ margin-top: -38rem;
+ position: absolute;
+ margin-left: 15rem;
+
+ }

@@ -51,7 +51,16 @@ const Session = Backbone.Model.extend({
           })
         },
       })
-    }
+    },
+    logout: function() {
+    $.ajax({
+      type: 'POST',
+      url: `https://baas.kinvey.com/user/${settings.appId}/_logout`,
+    })
+    localStorage.removeItem('authtoken')
+    this.clear()
+    store.settings.history.push('login')
+  },
 });
 
 export default Session;
