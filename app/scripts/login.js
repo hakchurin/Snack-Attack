@@ -15,10 +15,10 @@ function loginInfo() {
   let login = $(`
     <div class="login">
       <form class= "loginForm">
-        <h2> Login </h2>
+        <h2 id="loginHead"> Login </h2>
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
-        <input type="submit" id="loginSubmit" class="submit" name="submit" value="submit">
+        <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
       </form>
     </div>
     `);
@@ -51,8 +51,6 @@ function loginInfo() {
   },
   error: function(response){
   }
-
-
   });
   });
   return login;

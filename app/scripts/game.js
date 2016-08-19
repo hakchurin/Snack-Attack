@@ -16,8 +16,6 @@ function gameView() {
     var lastSpawn = -1;
     var objects = [];
     var startTime = Date.now();
-    canvas.width = $(window).width();
-    canvas.height = $(window).height() - 100;
     var gameSize = {x: canvas.width,y: canvas.height};
     var score = 0;
     var lives = 3;
@@ -25,6 +23,8 @@ function gameView() {
     var paused = true;
     var game;
     var countdown;
+    canvas.width = $(window).width();
+    canvas.height = $(window).height() - 100;
 
 
 
@@ -41,7 +41,6 @@ function gameView() {
         return time;
     };
     var startInterval = function() {
-
         $("#timer").text(calculateTime(input));
         input--;
         countdown = setInterval(function() {
@@ -60,10 +59,8 @@ function gameView() {
 
 
     function Game() {
-        console.log('starting a game');
         var gameSize = {x: canvas.width,y: canvas.height};
         this.bodies = objects.concat(new Player(this, gameSize));
-
 
 
         function StartOfGame() {
@@ -78,11 +75,6 @@ function gameView() {
             paused = false;
             requestAnimationFrame(tick);
         })
-
-
-
-
-
         var self = this;
         var tick = function() {
             self.update();
@@ -91,26 +83,20 @@ function gameView() {
                 cancelAnimationFrame(tick);
             }
 
-
-
-
             function spawnRandomObject() {
                 var size = {x: 15,y: 0};
                 var x = Math.random() * (canvas.width - 30) + 15;
-
                 var object = {x: x, y: spawnLineY,
                     center: {x: x + 7.5, y: 50 - size.x},
                     size: {x: 15, y: 0},
                 }
                 objects.push(object);
             }
-
             var time = Date.now();
             if (time > (lastSpawn + spawnRate)) {
                 lastSpawn = time;
                 spawnRandomObject();
             }
-
             for (var i = 0; i < objects.length; i++) {
                 var object = objects[i];
                 var size = {x: 15, y: 0};
@@ -118,13 +104,14 @@ function gameView() {
                 ctx.beginPath();
                 ctx.arc(object.x, object.y, size.x, size.y, Math.PI * 2);
                 ctx.fill();
-
             }
+
 
             function endGame() {
                 $("#screen").hide();
                 $("#score").text(score);
                 $(".FinishScreen").show();
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 self.update();
             }
               if (lives === 0 || input === 0) {
@@ -134,12 +121,16 @@ function gameView() {
             if (lives !== 0 && input !== 0 && !paused) {
                 requestAnimationFrame(tick);
             }
-            $('#restartBtn').on('click', function() {
-                resetView();
-            })
-
         };
         tick();
+
+        $('#restartBtn').on('click', function() {
+          requestAnimationFrame(tick);
+          tick();
+          startInterval();
+          resetView();
+          this.bodies;
+        })
 
         $('#pause').on('click', function() {
             paused = true;
@@ -151,20 +142,22 @@ function gameView() {
             requestAnimationFrame(tick);
             startInterval();
         })
+        function resetView() {
+            score = 0;
+            lives = 3;
+            input = 60;
+            self.update();
+            $(".FinishScreen").hide();
+        }
     };
 
-    function resetView() {
-        score = 0;
-        lives = 3;
-        input = 60;
-        self.update();
-    }
+
 
 
     Game.prototype = {
         update: function() {
-            $("#timer").text("time: " + calculateTime(input));
-            $("#score").text("Current Score: " + score);
+            $("#timer").text("Time: " + calculateTime(input));
+            $("#footerScore").text("Current Score: " + score);
             $("#lives").text("Lives: " + lives);
 
             function hitTestPoint(b1, b2) {
@@ -209,7 +202,6 @@ function gameView() {
         this.keyboarder = new Keyboarder();
     };
 
-
     Player.prototype = {
         update: function() {
             if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT)) {
@@ -219,7 +211,6 @@ function gameView() {
             }
         }
     };
-
 
     var drawRect = function(screen, body) {
         ctx.fillRect(body.center.x - body.size.x / 2,
@@ -266,5 +257,4 @@ function gameView() {
     game = new Game("screen");
 
 }
-// render gameView();
 export default gameView;

@@ -7,25 +7,25 @@ import session from './session';
 
 
 
-
-
+// <h3 id= "name">name</h3>
+// <h3 id="signUsername"> username </h3>
+// <h3 id="signPassword"> password </h3>
 
 
 function signUpInfo() {
   let signUp = $(`
+    <div id="signUp">
     <form class = "signUp">
     <h1 id= "SignUp"> Sign Up </h1>
 
-    <h3 id= "name">name</h3>
     <input type="text" name="title" class="name" placeholder="name">
 
-    <h3 id="username"> username </h3>
-    <input type="text" name="title" class="username" placeholder="username">
+    <input type="text" name="title" class="signUsername" placeholder="username">
 
-    <h3 id="password"> password </h3>
-    <input type="password" name="title" class="password" placeholder="password">
+    <input type="password" name="title" class="signPassword" placeholder="password">
     <input type="submit" id="signUpSubmit" class="submit" name="submit" value="submit">
     </form>
+    </div>
     `);
     signUp.find('input[type="submit"]').on('click', function(evt){
       evt.preventDefault();
@@ -36,7 +36,6 @@ function signUpInfo() {
       $.ajax({
         type:'POST',
         url: `${settings.baseUrl}/user/${settings.appId}`,
-
         data: JSON.stringify({
           username: username,
           password: password
@@ -50,7 +49,6 @@ function signUpInfo() {
           session.authtoken = response._kmd.authtoken;
           router.navigate('game', {trigger:true});
           localStorage.authtoken = response._kmd.authtoken;
-
         },
       });
     });

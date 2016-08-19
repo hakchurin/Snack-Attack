@@ -14,44 +14,263 @@ body {
   // margin-top: 3rem;
 }
 
-p#lives{
-  margin-top: 0rem;
+h1{
+  font-family: oswald;
+font-size: 3rem;
+color: #127DA7;
 }
-
 .FinishScreen {
   margin: 0 auto;
- text-align: center;
- width: 600px;
- height: 450px;
- border: 2px solid black;
- background-color: #8db370;
- margin-top: -38rem;
- position: absolute;
- margin-left: 15rem;
+     text-align: center;
+     width: 600px;
+     height: 450px;
+     border: 2px solid #127DA7;
+     background-color: white;
+     margin-top: -33rem;
+     position: absolute;
+     margin-left: 17rem;
+ }
+ button#restartBtn{
+   position: absolute;
+margin-top: 15rem;
+margin-left: -6rem;
+border-radius: 0.5rem;
+height: 4rem;
+width: 12rem;
+font-size: 1.5rem;
+font-family: avenir;
+background-color: #127DA7;
+color: white;
+border: 2px solid #127DA7;
  }
 
 #header{
   height: 135px;
-      border: 2px solid;
+  border: 2px solid;
 }
 
 #footer{
-  border: 2px solid;
-      height: 6rem;
-      margin-top: 35rem;
-      width: 100%;
-      position: absolute;
+  border: 2px solid #127DA7;
+    height: 6rem;
+    margin-top: 35rem;
+    width: 100%;
+    position: absolute;
+    background: #127DA7;
 }
 
 .StartScreen {
-  margin: 0 auto;
+ margin: 0 auto;
  text-align: center;
  width: 600px;
  height: 450px;
- border: 2px solid black;
- background-color: #8db370;
- margin-top: -38rem;
+ border: 2px solid #127DA7 ;
+ background-color: white;
+ margin-top: -33rem;
  position: absolute;
- margin-left: 15rem;
-
+ margin-left: 17rem;
  }
+
+button#startBtn{
+  position: absolute;
+margin-top: 15rem;
+margin-left: -6rem;
+border-radius: 0.5rem;
+height: 4rem;
+width: 12rem;
+font-size: 1.5rem;
+font-family: avenir;
+background-color: #127DA7;
+color: white;
+border: 2px solid #127DA7;
+ &:hover{
+     background-color: white;
+     color:#127DA7;
+     }
+ }
+
+
+ p#timer{
+   position: absolute;
+margin-left: 22rem;
+margin-top: 2.5rem;
+font-size: 1.5rem;
+font-family: oswald;
+color: white;
+ }
+
+ p#lives{
+   position: absolute;
+     margin-left: 67rem;
+     margin-top: 2.5rem;
+     font-size: 1.5rem;
+     font-family: oswald;
+     color: white;
+ }
+
+ p#footerScore{
+   margin-left: 45rem;
+ top: 1rem;
+ position: absolute;
+ color: white;
+ font-family: oswald;
+ font-size: 1.5rem;
+ }
+
+ input#pause{
+   margin-top: 2rem;
+   position: absolute;
+ }
+
+.login{
+border: 2px solid #127DA7;
+width: 20rem;
+height: 23rem;
+margin: 0 auto;
+margin-top: 9rem;
+background: white;
+}
+
+input#loginSubmit{
+  position: absolute;
+  margin-top: 12rem;
+  margin-left: 6rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 8rem;
+  font-size: 1rem;
+  font-family: avenir;
+  background-color: #127DA7;
+   color: white;
+   border: 2px solid #127DA7;
+&:hover{
+    background-color: white;
+    color:#127DA7;
+    }
+
+}
+
+input.username{
+  position: absolute;
+margin-left: 4rem;
+border-radius: .5rem;
+height: 2rem;
+width: 12rem;
+background: #EAEAEA;
+font-size: 1.5rem;
+font-family: avenir;
+margin-top: 1rem;
+}
+
+input.password{
+  position: absolute;
+  margin-top: 5rem;
+  margin-left: 4rem;
+  border-radius: .5rem;
+  height: 2rem;
+  width: 12rem;
+  background: #EAEAEA;
+  font-size: 1.5rem;
+  font-family: avenir;
+}
+
+h2#loginHead{
+  text-align: center;
+font-family: oswald;
+font-size: 3rem;
+margin-top: 8px;
+color:#127DA7;
+}
+
+::-webkit-input-placeholder {
+  color: grey;
+  text-align: center;
+}
+form.signUp{
+  margin-top: 2rem;
+}
+
+div#signUp{
+  border: 2px solid #127DA7;
+  width: 23rem;
+  height: 30rem;
+  margin: 0 auto;
+  margin-top: 9rem;
+  background: white;
+}
+
+input#signUpSubmit{
+  position: absolute;
+  margin-top: 18rem;
+  margin-left: 7rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 8rem;
+  font-size: 1rem;
+  font-family: avenir;
+  background-color: #127DA7;
+   color: white;
+   border: 2px solid #127DA7;
+&:hover{
+    background-color: white;
+    color:#127DA7;
+    }
+
+}
+input.name{
+  position: absolute;
+  margin-left: 5rem;
+  border-radius: .5rem;
+  height: 2rem;
+  width: 12rem;
+  background: #EAEAEA;
+  font-size: 1.5rem;
+  font-family: avenir;
+  margin-top: 2rem;
+}
+
+input.signUsername{
+  position: absolute;
+  margin-left: 5rem;
+  border-radius: .5rem;
+  height: 2rem;
+  width: 12rem;
+  background: #EAEAEA;
+  font-size: 1.5rem;
+  font-family: avenir;
+  margin-top:7rem;
+}
+
+input.signPassword{
+  position: absolute;
+  margin-left: 5rem;
+  border-radius: .5rem;
+  height: 2rem;
+  width: 12rem;
+  background: #EAEAEA;
+  font-size: 1.5rem;
+  font-family: avenir;
+  margin-top: 12rem;
+}
+
+h3#name{
+      margin-left: 9rem;
+}
+
+h3#signUsername{
+  margin-left: 8rem;
+  position: absolute;
+  margin-top: 3.5rem;
+}
+
+h3#signPassword{
+  margin-left: 8rem;
+  position: absolute;
+  margin-top: 9.5rem;
+}
+
+h1#SignUp{
+  text-align: center;
+  font-family: oswald;
+  font-size: 3rem;
+  color:#127DA7;
+}

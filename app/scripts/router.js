@@ -25,7 +25,7 @@ function resetCanvas() {
       '/*': 'redirectFunction'
     },
     loginfunction: function(){
-      $('#container').empty(  gameView).append(loginInfo());
+      $('#container').empty(gameView).append(loginInfo());
       // ctx.clearRect(0, 0, canvas.width, canvas.height);
       resetCanvas();
     },
