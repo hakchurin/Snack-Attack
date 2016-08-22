@@ -92,7 +92,7 @@ function gameView() {
               this.size.x, this.size.y);
       }
       this.draw = function(gameSize) {
-          ctx.clearRect(0, 0, gameSize.x, gameSize.y);
+          // ctx.clearRect(0, 0, gameSize.x, gameSize.y);
           this.drawRect()
 
       }
@@ -101,6 +101,50 @@ function gameView() {
   var gameSize = {x: canvas.width, y: canvas.height};
   let player = new Player(ctx,gameSize)
 
+
+
+  function FallingObject() {
+     this.size = {x: 15,y: 0};
+     this.x = Math.random() * (canvas.width - 30) + 15;
+     this.y = 25
+     this.objects = {x: this.x,y: spawnLineY,
+         center: {x: this.x + 7.5,y: 50 - this.size.x},
+         size: {x: 15,y: 0},
+       }
+
+
+    this.draw = function() {
+      this.y += 1;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size.x, this.size.y, Math.PI * 2);
+      ctx.fill();
+    }
+
+
+    // var time = Date.now();
+    // if (time > (lastSpawn + spawnRate)) {
+    //     lastSpawn = time;
+    //     FallingObject();
+    // }
+
+
+    //  this.update = function(object){
+    //   for (var i = 0; i < this.objects.length; i++) {
+    //         this.obj = objects[i];
+    //         var size = {x: 15,y: 0};
+    //         obj.y += spawnRateOfDescent;
+    //         ctx.beginPath();
+    //         ctx.arc(obj.x, obj.y, size.x, size.y, Math.PI * 2);
+    //         ctx.fill();
+    //     }
+     //
+    //   }
+  }
+
+
+
+
+//
 //
 //   function SpawnRandomObject() {
 //       this.size = {x: 15,y: 0};
@@ -122,14 +166,11 @@ function gameView() {
 //       ctx.fill();
 //   }
 //
-//
 // }
 //
 //
 //   let spawnRandomObject = new SpawnRandomObject(gameSize);
-
-
-
+//
 
 
 
@@ -143,7 +184,8 @@ function gameView() {
         // this.bodies = objects.concat(new Player(this, gameSize));
         // this.player= [new Player(this, gameSize)];
         this.player = player
-        // this.fallingObj = object
+        let fallingObject = new FallingObject();
+        this.objects = [fallingObject]
 
         var self = this;
         function StartOfGame() {
@@ -163,19 +205,53 @@ function gameView() {
 
         var tick = function() { //syntax consitant
           // console.log('in tick');
+          ctx.clearRect(0, 0, gameSize.x, gameSize.y);
+          self.player.drawRect()
+          self.objects.forEach(obj => {
+            obj.draw()
+
+          })
+
+          var time = Date.now();
+          if (time > (lastSpawn + spawnRate)) {
+              lastSpawn = time;
+              self.objects.push(new FallingObject());
+          }
+
           self.player.update()
             self.update();
             if (paused) {
                 cancelAnimationFrame(tick);
             }
 
+            // function spawnRandomObject() {
+            //     var size = {x: 15,y: 0};
+            //     var x = Math.random() * (canvas.width - 30) + 15;
+            //     var object = {x: x,y: spawnLineY,
+            //         center: {x: x + 7.5,y: 50 - size.x},
+            //         size: {x: 15,y: 0},
+            //     }
+            //     objects.push(object);
+            // }
+            //
+            // var time = Date.now();
+            // if (time > (lastSpawn + spawnRate)) {
+            //     lastSpawn = time;
+            //     spawnRandomObject();
+            // }
+            // for (var i = 0; i < objects.length; i++) {
+            //     var object = objects[i];
+            //     var size = {x: 15,y: 0};
+            //     object.y += spawnRateOfDescent;
+            //     ctx.beginPath();
+            //     ctx.arc(object.x, object.y, size.x, size.y, Math.PI * 2);
+            //     ctx.fill();
+            // }
 
 
-            var time = Date.now();
-            if (time > (lastSpawn + spawnRate)) {
-                lastSpawn = time;
-                // spawnRandomObject();
-            }
+
+
+
 
             function endGame() {
                 $("#screen").hide();
