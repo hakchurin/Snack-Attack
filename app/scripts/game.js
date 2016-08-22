@@ -14,14 +14,8 @@ function gameView() {
     var spawnRate = 1500;
     var spawnRateOfDescent = 1;
     var lastSpawn = -1;
-    // var objects = [];
-    // var player = [];
-
     var startTime = Date.now();
-    var gameSize = {
-        x: canvas.width,
-        y: canvas.height
-    };
+    var gameSize = {x: canvas.width, y: canvas.height};
     var score = 0;
     var lives = 3;
     var input = 60;
@@ -92,10 +86,10 @@ function gameView() {
               this.size.x, this.size.y);
       }
       this.draw = function(gameSize) {
-          // ctx.clearRect(0, 0, gameSize.x, gameSize.y);
           this.drawRect()
 
       }
+
     };
 
   var gameSize = {x: canvas.width, y: canvas.height};
@@ -120,58 +114,7 @@ function gameView() {
       ctx.fill();
     }
 
-
-    // var time = Date.now();
-    // if (time > (lastSpawn + spawnRate)) {
-    //     lastSpawn = time;
-    //     FallingObject();
-    // }
-
-
-    //  this.update = function(object){
-    //   for (var i = 0; i < this.objects.length; i++) {
-    //         this.obj = objects[i];
-    //         var size = {x: 15,y: 0};
-    //         obj.y += spawnRateOfDescent;
-    //         ctx.beginPath();
-    //         ctx.arc(obj.x, obj.y, size.x, size.y, Math.PI * 2);
-    //         ctx.fill();
-    //     }
-     //
-    //   }
   }
-
-
-
-
-//
-//
-//   function SpawnRandomObject() {
-//       this.size = {x: 15,y: 0};
-//       this.x = Math.random() * (canvas.width - 30) + 15;
-//       this.objects = {x: x,y: spawnLineY,
-//           center: {x: x + 7.5,y: 50 - size.x},
-//           size: {x: 15,y: 0},
-//       }
-//       objects.push(object);
-//   }
-//
-// this.update = function(object){
-//   for (var i = 0; i < this.objects.length; i++) {
-//       this.obj = objects[i];
-//       var size = {x: 15,y: 0};
-//       obj.y += spawnRateOfDescent;
-//       ctx.beginPath();
-//       ctx.arc(obj.x, obj.y, size.x, size.y, Math.PI * 2);
-//       ctx.fill();
-//   }
-//
-// }
-//
-//
-//   let spawnRandomObject = new SpawnRandomObject(gameSize);
-//
-
 
 
 
@@ -181,8 +124,6 @@ function gameView() {
       console.log('running game function');
         var gameSize = {x: canvas.width, y: canvas.height};
 
-        // this.bodies = objects.concat(new Player(this, gameSize));
-        // this.player= [new Player(this, gameSize)];
         this.player = player
         let fallingObject = new FallingObject();
         this.objects = [fallingObject]
@@ -203,8 +144,7 @@ function gameView() {
         StartOfGame();
 
 
-        var tick = function() { //syntax consitant
-          // console.log('in tick');
+          function tick() { //syntax consitant
           ctx.clearRect(0, 0, gameSize.x, gameSize.y);
           self.player.drawRect()
           self.objects.forEach(obj => {
@@ -218,38 +158,53 @@ function gameView() {
               self.objects.push(new FallingObject());
           }
 
+
+
           self.player.update()
             self.update();
             if (paused) {
                 cancelAnimationFrame(tick);
             }
 
-            // function spawnRandomObject() {
-            //     var size = {x: 15,y: 0};
-            //     var x = Math.random() * (canvas.width - 30) + 15;
-            //     var object = {x: x,y: spawnLineY,
-            //         center: {x: x + 7.5,y: 50 - size.x},
-            //         size: {x: 15,y: 0},
-            //     }
-            //     objects.push(object);
-            // }
-            //
-            // var time = Date.now();
-            // if (time > (lastSpawn + spawnRate)) {
-            //     lastSpawn = time;
-            //     spawnRandomObject();
-            // }
-            // for (var i = 0; i < objects.length; i++) {
-            //     var object = objects[i];
-            //     var size = {x: 15,y: 0};
-            //     object.y += spawnRateOfDescent;
-            //     ctx.beginPath();
-            //     ctx.arc(object.x, object.y, size.x, size.y, Math.PI * 2);
-            //     ctx.fill();
-            // }
 
+            function hitTestPoint(object){
+              if (self.player.center.x <= object.x - 50 || self.player.center.x >= object.x + 50){
+                return false;
+              } else if (object.y >= self.player.center.y - 15 && object.y <= self.player.center.y + 15){
+                return true;
+              } else{
+                return false;
+              }
+            }
+            self.objects= self.objects.filter(function(object){
+              if (hitTestPoint(object)){
+                score += 100;
+                return false;
+              } else{
+                return true;
+              }
+            })
 
+            function reachedBottom(object){
+              console.log(gameSize.y);
+              console.log(object.y);
+              if (object.y >= gameSize.y){
+                return true;
+              } else {
+                return false;
+              }
+            }
 
+             self.objects = self.objects.filter((current, i, arr) => {
+               if (reachedBottom(current)){
+                 lives -= 1;
+
+                 return false;
+               } else {
+                 return true;
+               }
+
+            })
 
 
 
@@ -289,6 +244,8 @@ function gameView() {
             startInterval();
         })
 
+
+
         function resetView() {
             score = 0;
             lives = 3;
@@ -307,37 +264,8 @@ function gameView() {
             $("#footerScore").text("Current Score: " + score);
             $("#lives").text("Lives: " + lives);
 
-            function hitTestPoint(b1, b2) {
-                if (b2.center.x <= b1.center.x - 50 || b2.center.x >= b1.center.x + 55) {
-                    return false;
-                } else if (b1.center.y >= b2.y - 15 && b1.center.y <= b2.y + 15) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            //
-            // var filteredObjects = objects.filter((current, i, arr) => {
-            //     if (hitTestPoint(this.bodies[0], current)) {
-            //         score += 100;
-            //         return false;
-            //     } else if (current.y === $(window).height()) {
-            //         lives -= 1;
-            //         return false;
-            //     } else {
-            //         return true
-            //     }
-            // })
-            //
-            // objects = filteredObjects;
 
-        //     for (var i = 0; i < this.bodies.length; i++) {
-        //         this.bodies[i].update();
-        //     }
         },
-
-
-
 
     };
 
