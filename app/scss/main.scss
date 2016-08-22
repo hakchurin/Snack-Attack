@@ -4,6 +4,7 @@ body {
     background-color: ivory;
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 
 
@@ -100,7 +101,7 @@ color: white;
 
  p#lives{
    position: absolute;
-     margin-left: 67rem;
+    //  margin-left: 67rem;
      margin-top: 2.5rem;
      font-size: 1.5rem;
      font-family: oswald;
@@ -117,11 +118,11 @@ color: white;
  }
 
  input#pause{
-   margin-top: 2rem;
+   margin-top: 0rem;
    position: absolute;
  }
 
-.login{
+.loginPage{
 border: 2px solid #127DA7;
 width: 20rem;
 height: 23rem;

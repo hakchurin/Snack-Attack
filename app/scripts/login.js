@@ -13,12 +13,14 @@ var ctx = canvas.getContext("2d");
 
 function loginInfo() {
   let login = $(`
-    <div class="login">
+    <div class="loginPage">
       <form class= "loginForm">
         <h2 id="loginHead"> Login </h2>
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
         <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
+        <button id="signUp"> If you dont have an account sign up> </button>
+
       </form>
     </div>
     `);
@@ -42,8 +44,8 @@ function loginInfo() {
   },
   contentType: 'application/json',
   success: function(response){
-    session.username = username;
-    session.authtoken = response._kmd.authtoken;
+    session.set('username', response.username);
+    session.set('authtoken', response._kmd.authtoken);
     router.navigate('game', {trigger:true});
     $('.username').val('');
     $('.password').val('');

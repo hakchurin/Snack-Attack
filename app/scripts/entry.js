@@ -15,10 +15,13 @@ Backbone.history.start();
 
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
-  if (session.authtoken) {
-    xhrAjax.setRequestHeader('Authorization', `Kinvey ${session.authtoken}`);
+  if (localStorage.getItem('authtoken')) {
+    xhrAjax.setRequestHeader('Authorization', `Kinvey ${localStorage.getItem('authtoken')}`);
   } else {
-    console.log('basic');
     xhrAjax.setRequestHeader('Authorization', `Basic ${settings.basicAuth}`);
   }
 });
+
+if(localStorage.getItem('authtoken')){
+  session.retrieve();
+}

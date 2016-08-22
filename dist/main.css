@@ -1,7 +1,8 @@
 body {
   background-color: ivory;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 #score {
   position: absolute;
@@ -85,7 +86,6 @@ p#timer {
 
 p#lives {
   position: absolute;
-  margin-left: 67rem;
   margin-top: 2.5rem;
   font-size: 1.5rem;
   font-family: oswald;
@@ -100,10 +100,10 @@ p#footerScore {
   font-size: 1.5rem; }
 
 input#pause {
-  margin-top: 2rem;
+  margin-top: 0rem;
   position: absolute; }
 
-.login {
+.loginPage {
   border: 2px solid #127DA7;
   width: 20rem;
   height: 23rem;

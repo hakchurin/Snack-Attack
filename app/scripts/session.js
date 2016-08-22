@@ -56,6 +56,9 @@ const Session = Backbone.Model.extend({
     $.ajax({
       type: 'POST',
       url: `https://baas.kinvey.com/user/${settings.appId}/_logout`,
+      // headers: {
+      //   Authorization: `Kinvey ${this.get('authtoken')}`
+      // }
     })
     localStorage.removeItem('authtoken')
     this.clear()
@@ -63,4 +66,6 @@ const Session = Backbone.Model.extend({
   },
 });
 
-export default Session;
+let session= new Session();
+
+export default session;
