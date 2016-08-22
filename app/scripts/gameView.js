@@ -7,8 +7,8 @@ import footerView from './footer';
 import startGameModal from './startGameModal';
 import Player from './player';
 import FallingObject from './fallingObj';
-
-
+import scoreCollection from './scoreCollection';
+import session from './session';
 
 
     function Game(canvas) {
@@ -32,10 +32,7 @@ import FallingObject from './fallingObj';
         $("#lives").text("Lives: " + this.lives);
 
         $('#restartBtn').on('click', function() {
-            // requestAnimationFrame(self.tick.bind(self));
-            // self.tick();
-            // self.startInterval();
-            // self.resetView();
+
             $('startGameModal').hide();
             router.gamefunction();
 
@@ -156,8 +153,11 @@ import FallingObject from './fallingObj';
                 $("#screen").hide();
                 $("#score").text("Score: " + this.score);
                 $(".FinishScreen").show();
-
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                scoreCollection.create({
+                  score:this.score,
+                  username:session.get('username')
+                })
             }
             if (this.lives === 0 || this.input === 0) {
                 cancelAnimationFrame(this.tick.bind(this));
@@ -165,6 +165,7 @@ import FallingObject from './fallingObj';
             } else if (this.lives !== 0 && this.input !== 0 && !this.paused) {
                 requestAnimationFrame(this.tick.bind(this));
             }
+
         },
         resetView: function() {
             this.score = 0;

@@ -8,12 +8,6 @@ import settings from './settings';
 
 //
 
-
-
-
-Backbone.history.start();
-
-
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   if (localStorage.getItem('authtoken')) {
     xhrAjax.setRequestHeader('Authorization', `Kinvey ${localStorage.getItem('authtoken')}`);
@@ -25,3 +19,7 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
 if(localStorage.getItem('authtoken')){
   session.retrieve();
 }
+
+
+
+Backbone.history.start();
