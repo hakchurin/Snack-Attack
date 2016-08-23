@@ -1,9 +1,9 @@
 
-
+import _ from 'underscore'
 import $ from 'jquery';
 import Backbone from 'backbone';
 import scoreCollection from './scoreCollection';
-
+import router from './router';
 
 
 
@@ -12,18 +12,38 @@ import scoreCollection from './scoreCollection';
 function highScoreView(){
   let highScore = $(`
     <div class="highScore">
-      <h1> Leaderboard </h1>
-      <h2> Rank </h2>
-      <ul>  </ul>
-      <h2> Name </h2>
-      <h2> Score </h2>
+    <h1> Leaderboard </h1>
+
+    <table>
+    <thead>
+    <tr>
+      <th> Rank </th>
+      <th> Name </th>
+      <th> Score </th>
+      </tr>
+      </thead>
+      </table>
       <button id="startBtn" value="Start"> Start Game </button>
+
     </div>
     `);
 
+highScore.find('button').on('click', function(){
+  router.navigate('game', {trigger:true});
+})
 scoreCollection.fetch({
   success: function(r){
-    console.log(r);
+
+    let fixedScore = _.sortBy(r.models,function(score){
+      return score.get('score');
+    })
+      fixedScore= fixedScore.reverse();
+      fixedScore.forEach(function(score,i){
+      let scoreLi = $(`<tbody><tr> <td> ${i +1} </td><td> ${score.get('username')}</td> <td>  ${score.get('score')}</td> </tr></tbody>`)
+
+      highScore.find('table').append(scoreLi);
+    })
+
   }
 });
 
