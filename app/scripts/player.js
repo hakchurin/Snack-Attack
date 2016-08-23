@@ -3,6 +3,11 @@ import $ from 'jquery';
 
 
 
+var canvas = document.getElementById("screen");
+var ctx= canvas.getContext("2d");
+var img = new Image();
+
+
       var Keyboarder = function() {
           var keyState = {};
           window.onkeydown = function(e) {
@@ -20,9 +25,11 @@ import $ from 'jquery';
   function Player(canvas, gameSize, game) {
     this.ctx = canvas;
       this.game = game;
-      this.size = {x: 100,y: 20};
-      this.center = {x: gameSize.x,y: gameSize.y - this.size.x};
+      this.size = {x: 200,y: 150};
+      this.center = {x: gameSize.x, y: gameSize.y - this.size.x};
       this.keyboarder = new Keyboarder();
+          img.src = "assets/images/fryingPan.svg";
+
 
       this.update = function() {
           if (this.keyboarder.isDown(this.keyboarder.KEYS.LEFT)) {
@@ -35,12 +42,24 @@ import $ from 'jquery';
       }
 
 
+
+
+
+
   };
   Player.prototype = {
       draw: function() {
-          this.ctx.fillRect(this.center.x - this.size.x / 2,
-              this.center.y - this.size.y / 2,
-              this.size.x, this.size.y);
+          // this.ctx.fillRect(this.center.x - this.size.x / 2,
+          //     this.center.y - this.size.y / 2,
+          //     this.size.x, this.size.y);
+          ctx.drawImage(img,this.center.x - 150 ,this.center.y , this.size.x  ,this.size.y );
+
       }
+
   }
+
   export default Player;
+
+  //
+  // var img = document.getElementById("scream");
+  //  ctx.drawImage(img, 10, 10);

@@ -5,7 +5,7 @@ import router from './router';
 import endGameModal from './endGameModal';
 import footerView from './footer';
 import startGameModal from './startGameModal';
-import Player from './player';
+import fillCanvas from './player';
 import FallingObject from './fallingObj';
 import scoreCollection from './scoreCollection';
 import session from './session';
@@ -15,7 +15,7 @@ import session from './session';
        this.gameSize = {x: canvas.width,y: canvas.height};
         this.ctx= canvas.getContext("2d");
         this.canvas =canvas;
-        this.player = new Player(this.ctx,this.gameSize, this);
+        this.player = new fillCanvas(this.ctx,this.gameSize, this);
         this.objects = []
         var self = this;
         this.input = 60;
@@ -73,18 +73,24 @@ import session from './session';
         startInterval: function() {
 
 
-            $("#timer").text(this.calculateTime(this.input));
+            $("#timer").text("Time: " + this.calculateTime(this.input));
 
             this.countdown = setInterval(() => {
                 this.input -= 1;
                 var data = this.calculateTime(this.input)
                 if (this.input > 0 && this.lives > 0) {
-                    $("#timer").text(data);
-                    // this.input--;
-                } else {
-                    $("#timer").text("LOST!")
+                    $("#timer").text("Time: " + data);
+                } else if  (this.input > 0) {
+                     $("#timer").text("Time: " + data);
+                     $("#timer").text("LOST!")
+
+                      clearInterval(this.countdown);
+                } else  {
+                  $("#timer").text("TIMES UP!")
+
+
                     clearInterval(this.countdown);
-                }
+                  }
             }, 1000);
         },
 
@@ -110,9 +116,9 @@ import session from './session';
 
 
             let hitTestPoint = (object) => {
-                if (this.player.center.x <= object.x - 50 || this.player.center.x >= object.x + 50) {
+                if (this.player.center.x <= object.x - 70 || this.player.center.x >= object.x + 70) {
                     return false;
-                } else if (object.y >= this.player.center.y - 15 && object.y <= this.player.center.y + 15) {
+                } else if (object.y - 75 >= this.player.center.y - 15 && object.y - 75 <= this.player.center.y + 15) {
                     return true;
                 } else {
                     return false;

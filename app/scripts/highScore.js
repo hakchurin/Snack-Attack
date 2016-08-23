@@ -23,7 +23,7 @@ function highScoreView(){
       </tr>
       </thead>
       </table>
-      <button id="startBtn" value="Start"> Start Game </button>
+      <button id="backGame" value="Backgame"> Back to game </button>
 
     </div>
     `);
@@ -38,6 +38,8 @@ scoreCollection.fetch({
       return score.get('score');
     })
       fixedScore= fixedScore.reverse();
+      fixedScore= fixedScore.slice(0,20);
+
       fixedScore.forEach(function(score,i){
       let scoreLi = $(`<tbody><tr> <td> ${i +1} </td><td> ${score.get('username')}</td> <td>  ${score.get('score')}</td> </tr></tbody>`)
 

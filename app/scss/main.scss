@@ -1,10 +1,13 @@
 
 
 body {
-    background-color: ivory;
+    // background-color: ivory;
+    height: 100vh;
     margin:0;
     padding:0;
     overflow: hidden;
+    background-image: url("assets/images/snackAttackKitchen.svg");
+    background-size: cover;
 }
 
 
@@ -19,6 +22,7 @@ h1{
   font-family: oswald;
 font-size: 3rem;
 color: #127DA7;
+    text-align: center;
 }
 .FinishScreen {
   margin: 0 auto;
@@ -52,7 +56,7 @@ border: 2px solid #127DA7;
 
 #footer{
   border: 2px solid #127DA7;
-    height: 6rem;
+    height: 9rem;
     margin-top: 35rem;
     width: 100%;
     position: absolute;
@@ -72,17 +76,17 @@ border: 2px solid #127DA7;
  }
 
 button#startBtn{
-  position: absolute;
-margin-top: 15rem;
-margin-left: -6rem;
-border-radius: 0.5rem;
-height: 4rem;
-width: 12rem;
-font-size: 1.5rem;
-font-family: avenir;
-background-color: #127DA7;
-color: white;
-border: 2px solid #127DA7;
+  top: 0;
+      margin-left: 0rem;
+      margin-top: 13rem;
+      width: 12rem;
+      height: 4rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      font-family: avenir;
+      background-color: #127DA7;
+      color: white;
+      border: 2px solid #127DA7;
  &:hover{
      background-color: white;
      color:#127DA7;
@@ -92,29 +96,29 @@ border: 2px solid #127DA7;
 
  p#timer{
    position: absolute;
-margin-left: 22rem;
-margin-top: 2.5rem;
-font-size: 1.5rem;
+margin-left: 30rem;
+margin-top: 3rem;
+font-size: 2rem;
 font-family: oswald;
 color: white;
  }
 
  p#lives{
    position: absolute;
-    //  margin-left: 67rem;
-     margin-top: 2.5rem;
-     font-size: 1.5rem;
+     margin-top: 3rem;
+     font-size: 2rem;
      font-family: oswald;
      color: white;
+     margin-left:45rem;
  }
 
  p#footerScore{
-   margin-left: 45rem;
+   margin-left: 56rem;
  top: 1rem;
  position: absolute;
  color: white;
  font-family: oswald;
- font-size: 1.5rem;
+ font-size: 2rem;
  }
 
  input#pause{
@@ -274,4 +278,69 @@ h1#SignUp{
   font-family: oswald;
   font-size: 3rem;
   color:#127DA7;
+}
+
+input#leaderboard{
+    color: white;
+    border: 2px solid white;
+    position: absolute;
+    margin-top: 4rem;
+    color: white;
+    border-radius: 8px;
+    background-color: #127DA7;
+    border: 2px solid white;
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.3rem;
+    font-family: oswald;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-left: 9rem;
+    margin-top: 2.7rem;
+&:hover{
+    background-color: white;
+    color:#127DA7;
+
+    }
+}
+
+button{
+  background: none;
+border: none;
+}
+i#pause{
+  font-size: 3rem;
+      color: white;
+}
+
+i#play{
+  font-size: 3rem;
+      color: white;
+}
+
+
+.highScore{
+  border: 2px solid white;
+background: pink;
+height: 100vh;
+}
+
+table{
+  width: 50%;
+margin: 0 auto;
+    text-align: center;
+}
+
+thead{
+      text-align: center;
+      font-family: oswald;
+}
+
+tbody{
+  font-family: avenir;
+
+}
+
+#fryingPan{
+  display:none;
 }

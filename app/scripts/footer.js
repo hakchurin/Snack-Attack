@@ -9,8 +9,8 @@ import router from './router';
             <p id="timer"></p>
             <p id ="footerScore">Current score: </p>
             <p id= "lives"> </p>
-            <input type="submit" id="play" name="play" value="play">
-            <input type="submit" id="pause" name="pause" value="pause">
+            <button><i class="fa fa-play" id="play" aria-hidden="true"></i></button>
+            <button><i class="fa fa-pause" id="pause" aria-hidden="true"></i></button>
             <input type="submit" id="leaderboard" name="Leaderboard" value="Leaderboard">
 
 
@@ -27,3 +27,4 @@ import router from './router';
 
 
         // i class="fa fa-play" aria-hidden="true"></i>
+        // <input type="submit" id="pause" name="pause" value="pause">
