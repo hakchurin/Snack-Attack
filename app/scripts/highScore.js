@@ -33,7 +33,6 @@ highScore.find('button').on('click', function(){
 })
 scoreCollection.fetch({
   success: function(r){
-
     let fixedScore = _.sortBy(r.models,function(score){
       return score.get('score');
     })

@@ -6,16 +6,18 @@ body {
     margin:0;
     padding:0;
     overflow: hidden;
-    background-image: url("assets/images/snackAttackKitchen.svg");
+    background-image: url("assets/images/snackAttackKitchen.png");
     background-size: cover;
 }
 
 
 #score{
-  position:absolute;
-  // top:0;
-  left:0;
-  // margin-top: 3rem;
+  position: absolute;
+  left: 0;
+  font-family: oswald;
+  font-size: 2rem;
+  margin-left: 6rem;
+  margin-top: 9.3rem;
 }
 
 h1{
@@ -25,15 +27,14 @@ color: #127DA7;
     text-align: center;
 }
 .FinishScreen {
-  margin: 0 auto;
-     text-align: center;
-     width: 600px;
-     height: 450px;
-     border: 2px solid #127DA7;
-     background-color: white;
-     margin-top: -33rem;
-     position: absolute;
-     margin-left: 17rem;
+    text-align: center;
+    width: 600px;
+    height: 450px;
+    border: 2px solid #127DA7;
+    background-color: white;
+    position: absolute;
+    margin-left: 19rem;
+    bottom: 13rem;
  }
  button#restartBtn{
    position: absolute;
@@ -64,15 +65,14 @@ border: 2px solid #127DA7;
 }
 
 .StartScreen {
- margin: 0 auto;
- text-align: center;
- width: 600px;
- height: 450px;
- border: 2px solid #127DA7 ;
- background-color: white;
- margin-top: -33rem;
- position: absolute;
- margin-left: 17rem;
+  text-align: center;
+  width: 600px;
+  height: 450px;
+  border: 2px solid #127DA7;
+  background-color: white;
+  position: absolute;
+  margin-left: 19rem;
+  bottom: 13rem;
  }
 
 button#startBtn{
@@ -295,7 +295,7 @@ input#leaderboard{
     font-family: oswald;
     letter-spacing: .5px;
     text-transform: uppercase;
-    margin-left: 9rem;
+    margin-left: 11.5rem;
     margin-top: 2.7rem;
 &:hover{
     background-color: white;
@@ -311,11 +311,17 @@ border: none;
 i#pause{
   font-size: 3rem;
       color: white;
+      top: 1.5rem;
+      margin-left: 3rem;
+      position: absolute;
 }
 
 i#play{
   font-size: 3rem;
-      color: white;
+color: white;
+top: 1.5rem;
+margin-left: 0.5rem;
+position: absolute;
 }
 
 
@@ -343,4 +349,33 @@ tbody{
 
 #fryingPan{
   display:none;
+}
+
+input#logoutSubmit{
+  position: absolute;
+  margin-top: 4rem;
+  margin-left: 1rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 5rem;
+  font-size: 1rem;
+  font-family: avenir;
+  background-color: #127DA7;
+  color: white;
+  border: 2px solid white;
+}
+
+p#highScore{
+  margin-left: 21rem;
+  top: 8rem;
+  font-family: oswald;
+  font-size: 2rem;
+  margin-top: 9.3rem;
+  position: absolute;
+}
+
+p#high{
+  position: absolute;
+  margin-left: 10rem;
+  top: -2rem;
 }
