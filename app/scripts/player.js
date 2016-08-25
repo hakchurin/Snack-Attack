@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 
 var canvas = document.getElementById("screen");
-var ctx= canvas.getContext("2d");
+var ctx = canvas.getContext("2d");
 var img = new Image();
 
 
@@ -28,7 +28,7 @@ var img = new Image();
       this.size = {x: 200,y: 150};
       this.center = {x: gameSize.x, y: gameSize.y - this.size.x};
       this.keyboarder = new Keyboarder();
-          img.src = "assets/images/fryingPan.svg";
+      img.src = "assets/images/fryingPan.svg";
 
 
       this.update = function() {

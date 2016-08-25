@@ -26,14 +26,15 @@ function endGameModal(){
 
 
 
+// 
+// var images = endGameImages[Math.floor(Math.random() * endGameImages.length)];
+//
+//     while (images.length !== 0) {
+//         // var index = Math.floor(Math.random() * images.length);
+//         $('<img src="images"/>').appendTo('#images');
+//     }
+//
 
-
-    // var images = ['./assets/images/bread.jpg', './assets/images/dimSum.jpg', './assets/images/pickle.jpg', './assets/images/toast.jpg'];
-    //
-    // while (images.length !== 0) {
-    //     var index = Math.floor(Math.random() * images.length);
-    //     $('<img src="images" + images.splice(index, 1) />').appendTo('#images');
-    // }
 
 
 

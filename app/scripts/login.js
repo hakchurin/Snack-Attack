@@ -19,7 +19,7 @@ function loginInfo() {
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
         <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
-        <button id="signUp"> If you dont have an account sign up> </button>
+        <p id = "noSignUp">If you dont have an account <a href="#signUp">Sign Up</a></p>
 
       </form>
     </div>

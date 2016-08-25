@@ -30,9 +30,10 @@ function signUpInfo() {
     signUp.find('input[type="submit"]').on('click', function(evt){
       evt.preventDefault();
       let name = signUp.find('.name').val();
-      let username = signUp.find('.username').val();
-      let password = signUp.find('.password').val();
+      let username = signUp.find('.signUsername').val();
+      let password = signUp.find('.signPassword').val();
 
+      localStorage.removeItem('authtoken');
       $.ajax({
         type:'POST',
         url: `${settings.baseUrl}/user/${settings.appId}`,
@@ -45,10 +46,12 @@ function signUpInfo() {
         },
         contentType: 'application/json',
         success: function(response){
-          session.username = username;
-          session.authtoken = response._kmd.authtoken;
-          router.navigate('game', {trigger:true});
+          // response.unset('password');
+          session.set('username', username);
+          session.set('authtoken', response._kmd.authtoken);
+          console.log('triggered');
           localStorage.authtoken = response._kmd.authtoken;
+          router.navigate('game', {trigger:true});
         },
       });
     });

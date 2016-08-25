@@ -116,9 +116,9 @@ import session from './session';
 
 
             let hitTestPoint = (object) => {
-                if (this.player.center.x <= object.x - 70 || this.player.center.x >= object.x + 70) {
+                if (this.player.center.x <= object.x - 90 || this.player.center.x >= object.x + 90) {
                     return false;
-                } else if (object.y - 75 >= this.player.center.y - 15 && object.y - 75 <= this.player.center.y + 15) {
+                } else if (object.y - 10 >= this.player.center.y - 15 && object.y - 10 <= this.player.center.y + 15) {
                     return true;
                 } else {
                     return false;

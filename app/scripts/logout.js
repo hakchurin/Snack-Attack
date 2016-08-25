@@ -9,18 +9,17 @@ function logoutInfo() {
   console.log(session);
   let navBtn;
   if (localStorage.getItem('authtoken')){
-
   navBtn = $(`
       <div class="logout">
           <input type="submit" id="logoutSubmit" class="submit" name="Logout" value="Logout">
       </div>
       `);
 
-  }else{
+  } else {
+    console.log('no authtoken yet');
     navBtn = $(`
         <div class="login">
             <input type="button" id="loginBtn" class="submit" name="Login" value="Login">
-            <input type="button" id="signUpBtn" class="submit" name="Sign Up" value="Sign Up">
         </div>
         `);
   }

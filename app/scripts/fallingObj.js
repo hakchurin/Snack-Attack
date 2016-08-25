@@ -2,29 +2,34 @@
 
 
 
-      function FallingObject(ctx, canvas) {
-          this.spawnLineY = 25;
-          this.ctx=ctx;
-          this.canvas = canvas;
 
-          this.size = {x: 15,y: 0};
+import foodImages from './foodArray';
+
+
+var canvas = document.getElementById("screen");
+var ctx = canvas.getContext("2d");
+
+      function FallingObject(ctx, canvas) {
+        this.img = new Image();
+
+          this.spawnLineY = 25;
+          this.ctx = ctx;
+          this.canvas = canvas;
+          this.size = {x: 70,y: 70};
           this.x = Math.random() * (this.canvas.width - 30) + 15;
           this.y = 25
-          this.objects = {
-              x: this.x,
-              y: this.spawnLineY,
-              center: {x: this.x + 7.5, y: 50 - this.size.x},
-              size: {x: 15,y: 0},
-          }
+          this.img.src = foodImages[Math.floor(Math.random() * foodImages.length)].url;
+
 
       }
 
       FallingObject.prototype = {
           draw: function() {
+            console.log('drawing');
               this.y += 1;
-              this.ctx.beginPath();
-              this.ctx.arc(this.x, this.y, this.size.x, this.size.y, Math.PI * 2);
-              this.ctx.fill();
+              ctx.drawImage(this.img, this.x, this.y, this.size.x, this.size.y);
+
+
           }
       }
 

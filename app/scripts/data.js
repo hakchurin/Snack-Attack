@@ -4,22 +4,22 @@
 
 var endGameImages = [{
   id: 1,
-  url: '../assets/images/bread.jpg',
+  url: '../assets/images/bacon.svg',
 },
 
 {
 id:2,
-url: '../assets/images/dimSum.jpg',
+url: '../assets/images/banana.svg',
 },
 
 {
 id:3,
-url: '../assets/images/pickle.jpg',
+url: '../assets/images/fry.svg',
 },
 
 {
 id:4,
-url: '../assets/images/toast.jpg',
+url: '../assets/images/hamburgar.svg',
 }
 ]
 
