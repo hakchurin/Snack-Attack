@@ -62,8 +62,6 @@ import session from './session';
               $('#volOff').hide();
 
             } else {
-                // $this.toggleClass.not('active');
-              // $('#volOff').show();
               $('#volUp').hide();
             }
         });
@@ -75,10 +73,7 @@ import session from './session';
 
               $('#volUp').hide();
               $('#volOff').show();
-
             } else {
-                // $this.toggleClass.not('active');
-              // $('#volOff').show();
               $('#volUp').show();
             }
         });
@@ -185,7 +180,7 @@ import session from './session';
                 if (this.player.center.x <= object.x - 90 || this.player.center.x >= object.x + 90) {
 
                     return false;
-                } else if (object.y - 10 >= this.player.center.y - 15 && object.y - 10 <= this.player.center.y + 15) {
+                } else if (object.y - 20 >= this.player.center.y - 15 && object.y - 20 <= this.player.center.y + 15) {
                   this.levelUp.play();
                     return true;
                 } else {
@@ -259,6 +254,7 @@ import session from './session';
         increaseSpeed: function() {
           window.setInterval(() => {
           this.spawnRateOfDescent = this.spawnRateOfDescent * 1.2;
+          this.spawnRate = this.spawnRate * 1.05;
           },5000)
         }
 

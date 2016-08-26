@@ -12,7 +12,7 @@ import router from './router';
 function highScoreView(){
   let highScore = $(`
     <div class="highScore">
-    <h1 id="leaderboard"> Leaderboard </h1>
+    <h1 id="leader"> Leaderboard </h1>
 
     <table>
     <thead>
@@ -21,6 +21,9 @@ function highScoreView(){
       <th> Name </th>
       <th> Score </th>
       </tr>
+      <tbody>
+
+      </tbody>
       </thead>
       </table>
       <button id="backGame" value="Backgame"> Back to game </button>
@@ -40,9 +43,9 @@ scoreCollection.fetch({
       fixedScore= fixedScore.slice(0,20);
 
       fixedScore.forEach(function(score,i){
-      let scoreLi = $(`<tbody><tr> <td id= "numbers"> ${i +1}</td> <td id="highName"> ${score.get('username')}</td> <td id="highScore">  ${score.get('score')}</td> </tr></tbody>`)
+      let scoreLi = $(`<tr> <td id= "numbers"> ${i +1}</td> <td id="highName"> ${score.get('username')}</td> <td id="highScore">  ${score.get('score')}</td> </tr>`)
 
-      highScore.find('table').append(scoreLi);
+      highScore.find('tbody').append(scoreLi);
     })
 
   }

@@ -12,7 +12,7 @@ body {
   font-family: oswald;
   font-size: 2rem;
   margin-left: 6rem;
-  margin-top: 9.3rem; }
+  margin-top: 18rem; }
 
 h1 {
   font-family: oswald;
@@ -27,12 +27,12 @@ h1 {
   border: 2px solid #127DA7;
   background-color: white;
   position: absolute;
-  margin-left: 19rem;
+  margin-left: 21rem;
   bottom: 13rem; }
 
 button#restartBtn {
   position: absolute;
-  margin-top: 15rem;
+  margin-top: 22rem;
   margin-left: -6rem;
   border-radius: 0.5rem;
   height: 4rem;
@@ -65,13 +65,12 @@ button#restartBtn {
   border: 2px solid #127DA7;
   background-color: white;
   position: absolute;
-  margin-left: 19rem;
+  margin-left: 21rem;
   bottom: 13rem; }
 
 button#startBtn {
   top: 0;
-  margin-left: 0rem;
-  margin-top: 13rem;
+  margin-top: 23rem;
   width: 12rem;
   height: 4rem;
   border-radius: 0.5rem;
@@ -79,7 +78,9 @@ button#startBtn {
   font-family: avenir;
   background-color: #127DA7;
   color: white;
-  border: 2px solid #127DA7; }
+  border: 2px solid #127DA7;
+  position: absolute;
+  left: 13rem; }
   button#startBtn:hover {
     background-color: white;
     color: #127DA7; }
@@ -274,17 +275,17 @@ button {
   border: none; }
 
 i#pause {
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
-  top: 1.5rem;
-  margin-left: 3rem;
+  top: 2.5rem;
+  margin-left: 2.5rem;
   position: absolute; }
 
 i#play {
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
-  top: 1.5rem;
-  margin-left: 0.5rem;
+  top: 2.5rem;
+  margin-left: 1rem;
   position: absolute; }
 
 #fryingPan {
@@ -302,13 +303,16 @@ input#logoutSubmit {
   background-color: #127DA7;
   color: white;
   border: 2px solid white; }
+  input#logoutSubmit:hover {
+    background-color: white;
+    color: #127DA7; }
 
 p#highScore {
   margin-left: 21rem;
   top: 8rem;
   font-family: oswald;
   font-size: 2rem;
-  margin-top: 9.3rem;
+  margin-top: 10.8rem;
   position: absolute; }
 
 p#high {
@@ -397,9 +401,250 @@ td#highName {
   color: white; }
 
 #volUp {
-  display: none; }
+  display: none;
+  font-size: 2rem;
+  left: 3rem;
+  position: absolute;
+  top: 0.2rem;
+  color: #12163F; }
 
 #volOff {
-  display: none; }
+  display: none;
+  font-size: 2rem;
+  left: 3rem;
+  position: absolute;
+  top: 0.2rem;
+  color: #12163F; }
+
+i#leftArrow {
+  font-size: 5rem;
+  position: absolute;
+  top: 17rem;
+  left: 11rem; }
+
+i#rightArrow {
+  font-size: 5rem;
+  position: absolute;
+  top: 17rem;
+  margin-left: 4rem; }
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-2deg); }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(3deg); }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-2deg); }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(4deg); }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg); } }
+#leftArrow:hover {
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-transform-origin: 50% 100%; }
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-2deg); }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(3deg); }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-2deg); }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(4deg); }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg); } }
+#rightArrow:hover {
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-transform-origin: 50% 100%; }
+
+#rightArrow {
+  color: #12163F; }
+  #rightArrow:hover {
+    color: #468AC9; }
+
+#leftArrow {
+  color: #12163F; }
+  #leftArrow:hover {
+    color: #468AC9; }
+
+#snackAttack {
+  font-family: overmuch;
+  color: #127DA7;
+  bottom: 19rem;
+  font-size: 4.5rem;
+  position: absolute;
+  left: 2rem; }
+
+#instructions {
+  position: absolute;
+  top: 14rem;
+  right: 3.5rem;
+  color: #127DA7;
+  font-family: avenir;
+  font-weight: 500; }
+
+#gameOver {
+  color: #127DA7;
+  font-size: 4rem;
+  font-family: oswald;
+  position: absolute;
+  left: 10rem;
+  bottom: 19rem;
+  text-transform: uppercase; }
+
+#leader {
+  color: #12163F;
+  font-family: oswald;
+  margin: 0; }
+
+@media screen and (max-width: 600px) {
+  body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; }
+
+  #footer {
+    background-color: #127DA7;
+    width: 100%; }
+
+  i#pause {
+    font-size: 1rem;
+    left: 0rem; }
+
+  i#play {
+    font-size: 1rem; }
+
+  input#logoutSubmit {
+    height: 1.5rem;
+    width: 4rem;
+    font-size: 0.8rem; }
+
+  input#leaderboard {
+    right: 19rem;
+    width: 5.5rem;
+    height: 1.5rem;
+    font-size: 0.7rem;
+    top: 0.5rem; }
+
+  p#timer {
+    right: 15rem;
+    font-size: 1rem; }
+
+  p#footerScore {
+    right: 7rem;
+    font-size: 1rem;
+    width: 5rem;
+    top: 2rem; }
+
+  p#lives {
+    right: 3rem;
+    font-size: 1rem; }
+
+  .StartScreen {
+    width: 23rem;
+    right: 1rem; }
+
+  #snackAttack {
+    font-size: 2.5rem;
+    left: 2rem;
+    top: 0rem; }
+
+  #instructions {
+    font-size: 1rem;
+    right: 1rem; }
+
+  i#leftArrow {
+    font-size: 2rem;
+    top: 20rem;
+    left: 7.5rem; }
+
+  i#rightArrow {
+    font-size: 2rem;
+    top: 20rem;
+    right: 7.5rem; }
+
+  button#startBtn {
+    width: 7rem;
+    height: 3rem;
+    font-size: 1rem;
+    left: 8rem; }
+
+  .FinishScreen {
+    width: 23rem;
+    right: 1rem; }
+
+  #gameOver {
+    font-size: 4rem;
+    left: 2.5rem; }
+
+  #score {
+    font-size: 1rem; }
+
+  p#highScore {
+    font-size: 1rem;
+    margin-left: 5rem;
+    width: 100%; }
+
+  p#high {
+    position: absolute;
+    margin-left: 14rem;
+    bottom: -1rem;
+    font-size: 1rem; }
+
+  .highScore {
+    margin-top: -2rem; }
+
+  table {
+    box-shadow: 0 7px 52px #121940;
+    color: #fff;
+    background: #127da7;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    top: 5.5rem;
+    position: absolute;
+    right: 14rem; }
+
+  button#backGame {
+    height: 2rem;
+    width: 7rem;
+    font-size: 0.8rem; }
+
+  #leader {
+    color: #12163F;
+    font-family: oswald;
+    left: 5.3rem;
+    position: absolute; } }
 
 /*# sourceMappingURL=main.css.map */

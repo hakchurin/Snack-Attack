@@ -12,7 +12,7 @@ import endGameImages from './data';
 function endGameModal(){
   let endModal = $(`
     <div class="FinishScreen" style="display:none">
-    <h1> Game Over </h1>
+    <h1 id="gameOver"> Game Over </h1>
     <p id="images"> </p>
     <p id="score"> Your score was: </p>
     <p id="highScore"> High Score:  </p>
@@ -26,7 +26,7 @@ function endGameModal(){
 
 
 
-// 
+//
 // var images = endGameImages[Math.floor(Math.random() * endGameImages.length)];
 //
 //     while (images.length !== 0) {

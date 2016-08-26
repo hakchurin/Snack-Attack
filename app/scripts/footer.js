@@ -31,23 +31,3 @@ import router from './router';
             return footer;
         }
         export default footerView;
-
-
-        // i class="fa fa-play" aria-hidden="true"></i>
-        // <input type="submit" id="pause" name="pause" value="pause">
-
-
-
-// function volume(){
-//   if $('#volUp').on('click', function(){
-//     this.audio.play();
-//     $('#volUp').hide();
-//     $('#volOff').show();
-//   } else {
-//     $('#volOff').on('click', function(){
-//      this.audio.pause();
-//      $('#volUp').show();
-//      $('#volOff').hide();
-//   }
-//   })
-// }
