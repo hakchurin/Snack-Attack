@@ -68,6 +68,20 @@ import session from './session';
             }
         });
 
+        $('#volUp').click(function(){
+            var $this = $(this);
+        $this.toggleClass('active');
+            if($this.hasClass('active')){
+
+              $('#volUp').hide();
+              $('#volOff').show();
+
+            } else {
+                // $this.toggleClass.not('active');
+              // $('#volOff').show();
+              $('#volUp').show();
+            }
+        });
 
 
 
