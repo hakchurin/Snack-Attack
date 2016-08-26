@@ -23,7 +23,7 @@ body {
 h1{
   font-family: oswald;
 font-size: 3rem;
-color: #127DA7;
+color: white;
     text-align: center;
 }
 .FinishScreen {
@@ -48,6 +48,10 @@ font-family: avenir;
 background-color: #127DA7;
 color: white;
 border: 2px solid #127DA7;
+&:hover{
+    background-color: white;
+    color:#127DA7;
+    }
  }
 
 #header{
@@ -325,27 +329,8 @@ position: absolute;
 }
 
 
-.highScore{
-  border: 2px solid white;
-background: pink;
-height: 100vh;
-}
 
-table{
-  width: 50%;
-margin: 0 auto;
-    text-align: center;
-}
 
-thead{
-      text-align: center;
-      font-family: oswald;
-}
-
-tbody{
-  font-family: avenir;
-
-}
 
 #fryingPan{
   display:none;
@@ -399,4 +384,101 @@ input#loginBtn{
   background-color: #127DA7;
   color: white;
   border: 2px solid white;
+}
+
+
+button#backGame{
+  position: absolute;
+    top: 41rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    height: 3rem;
+    width: 9rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid #127DA7;
+    &:hover{
+        background-color: white;
+        color:#127DA7;
+
+        }
+}
+
+
+
+
+.highScore{
+  // border: 2px solid white;
+    background: radial-gradient(ellipse farthest-corner at center top, #2196F3 0%, #fdf4a1 100%);
+height: 107vh;
+}
+
+
+
+thead{
+      text-align: center;
+      font-family: oswald;
+}
+
+table {
+  box-shadow: 0 7px 52px rgb(18, 25, 64);
+  color: #fff;
+  background: rgba(18,125,167,1.3);
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+   }
+
+
+tr{
+  font-weight: 500;
+}
+
+tbody{
+  font-family: avenir;
+  font-size: 14px;
+  cursor: pointer;
+
+  :hover{
+    background: #468AC9;
+     transform: scaleX(1.2) scaleY(1.5);
+     transition:  width 1s, height 1s, font 0.3s,  transform 1s;
+
+
+  }
+}
+
+
+td#numbers{
+  border: 2px solid white;
+    background: white;
+    color: #127DA7;
+    :hover{
+      background: #d7514d;
+    }
+}
+
+      td#highName {
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px 44px 0rem 49px;
+        margin: 0;
+        background: none;
+        color: white;
+
+      }
+
+
+
+#volUp{
+  display:none;
+}
+
+#volOff{
+  display:none;
 }

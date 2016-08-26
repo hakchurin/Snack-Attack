@@ -25,12 +25,18 @@ import session from './session';
         this.paused = false;
         this.lastSpawn = -1;
         this.spawnRate = 1500;
+        this.spawnRateOfDescent= 1;
+        this.audio = new Audio('assets/sound/snackAttackMusic.mp3');
+        this.levelUp = new Audio('assets/sound/levelUp.mp3');
+        this.miss = new Audio('assets/sound/miss.mp3');
+
+
+
 
 
         $("#timer").text("Time: " + this.calculateTime(this.input));
         $("#footerScore").text("Current Score: " + this.score);
         $("#lives").text("Lives: " + this.lives);
-
         $('#restartBtn').on('click', function() {
 
             $('startGameModal').hide();
@@ -38,14 +44,53 @@ import session from './session';
 
         })
 
+
+        $('#volUp').on('click', () => {
+            this.audio.play();
+        })
+        $('#volOff').on('click', () => {
+            this.audio.pause();
+        })
+
+        $('#volOff').show();
+        $('#volOff').click(function(){
+            var $this = $(this);
+        $this.toggleClass('active');
+            if($this.hasClass('active')){
+
+              $('#volUp').show();
+              $('#volOff').hide();
+
+            } else {
+                // $this.toggleClass.not('active');
+              // $('#volOff').show();
+              $('#volUp').hide();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
         $('#pause').on('click', () => {
             this.paused = true;
+            this.audio.pause();
+
             clearInterval(this.countdown);
         })
 
         $('#play').on('click', () => {
             this.paused = false;
             requestAnimationFrame(self.tick.bind(self));
+            this.audio.play();
+
             self.startInterval();
         })
         this.StartOfGame();
@@ -59,7 +104,11 @@ import session from './session';
                 $(".StartScreen").hide();
                 $("#screen").show();
                 this.startInterval()
+                this.increaseSpeed();
+                this.audio.play();
+
                 requestAnimationFrame(this.tick.bind(this));
+
             })
             this.player.draw()
         },
@@ -101,6 +150,7 @@ import session from './session';
             this.ctx.clearRect(0, 0, this.gameSize.x, this.gameSize.y);
             this.player.draw()
             this.objects.forEach(obj => {
+              obj.spawnRateOfDescent= this.spawnRateOfDescent;
                 obj.draw()
             })
 
@@ -108,6 +158,8 @@ import session from './session';
                 this.lastSpawn = this.time;
                 this.objects.push(new FallingObject(this.ctx, this.canvas));
             }
+
+
 
             this.player.update()
             if (this.paused) {
@@ -117,8 +169,10 @@ import session from './session';
 
             let hitTestPoint = (object) => {
                 if (this.player.center.x <= object.x - 90 || this.player.center.x >= object.x + 90) {
+
                     return false;
                 } else if (object.y - 10 >= this.player.center.y - 15 && object.y - 10 <= this.player.center.y + 15) {
+                  this.levelUp.play();
                     return true;
                 } else {
                     return false;
@@ -135,8 +189,10 @@ import session from './session';
                 }
             })
 
+            let self = this;
             function reachedBottom(object,gameSize) {
                 if (object.y >= gameSize.y) {
+                  self.miss.play();
                     return true;
                 } else {
                     return false;
@@ -160,6 +216,8 @@ import session from './session';
                 $("#score").text("Score: " + this.score);
                 $(".FinishScreen").show();
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.audio.pause();
+
                 scoreCollection.create({
                   score:this.score,
                   username:session.get('username')
@@ -182,7 +240,16 @@ import session from './session';
             $("#lives").text("Lives: " + this.lives);
             $("#timer").text("Time: " + this.calculateTime(this.input));
             $(".FinishScreen").hide();
+        },
+
+        increaseSpeed: function() {
+          window.setInterval(() => {
+          this.spawnRateOfDescent = this.spawnRateOfDescent * 1.2;
+          },5000)
         }
+
+
+
     };
 
     export default Game;

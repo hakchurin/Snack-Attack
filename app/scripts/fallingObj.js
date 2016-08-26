@@ -11,7 +11,7 @@ var ctx = canvas.getContext("2d");
 
       function FallingObject(ctx, canvas) {
         this.img = new Image();
-
+        this.spawnRateOfDescent= 1;
           this.spawnLineY = 25;
           this.ctx = ctx;
           this.canvas = canvas;
@@ -25,12 +25,13 @@ var ctx = canvas.getContext("2d");
 
       FallingObject.prototype = {
           draw: function() {
-            console.log('drawing');
-              this.y += 1;
+              this.y += this.spawnRateOfDescent;
               ctx.drawImage(this.img, this.x, this.y, this.size.x, this.size.y);
 
 
           }
       }
+
+
 
 export default FallingObject;

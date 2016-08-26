@@ -40,7 +40,7 @@ scoreCollection.fetch({
       fixedScore= fixedScore.slice(0,20);
 
       fixedScore.forEach(function(score,i){
-      let scoreLi = $(`<tbody><tr> <td> ${i +1} </td><td> ${score.get('username')}</td> <td>  ${score.get('score')}</td> </tr></tbody>`)
+      let scoreLi = $(`<tbody><tr> <td id= "numbers"> ${i +1}</td> <td id="highName"> ${score.get('username')}</td> <td id="highScore">  ${score.get('score')}</td> </tr></tbody>`)
 
       highScore.find('table').append(scoreLi);
     })
