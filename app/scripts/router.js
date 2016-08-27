@@ -9,7 +9,7 @@ import startGameModal from './startGameModal';
 import logoutInfo from './logout';
 import resetCanvas from './game';
 import Game from './gameView';
-import highScoreView from './highScore';
+import highScoreView from './leaderboard';
 
 
 

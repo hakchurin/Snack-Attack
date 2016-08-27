@@ -142,7 +142,7 @@ background: white;
 
 input#loginSubmit{
   position: absolute;
-  margin-top: 12rem;
+  margin-top: 9rem;
   margin-left: 6rem;
   border-radius: 0.5rem;
   height: 2rem;
@@ -150,8 +150,8 @@ input#loginSubmit{
   font-size: 1rem;
   font-family: avenir;
   background-color: #127DA7;
-   color: white;
-   border: 2px solid #127DA7;
+  color: white;
+  border: 2px solid #127DA7;
 &:hover{
     background-color: white;
     color:#127DA7;
@@ -371,9 +371,9 @@ p#high{
 }
 
 p#noSignUp{
-  margin-top: 12rem;
-    margin-left: 2rem;
-    font-family: avenir;
+  margin-top: 15rem;
+  margin-left: 1.5rem;
+  font-family: avenir;
 }
 
 
@@ -434,8 +434,10 @@ table {
   width: 50%;
   margin: 0 auto;
   text-align: center;
-   }
-
+  top: 6rem;
+position: absolute;
+left: 13rem;
+}
 
 tr{
   font-weight: 500;
@@ -613,9 +615,15 @@ text-transform: uppercase;
 }
 
 #leader{
-  color:#12163F;
-  font-family:oswald;
-  margin:0;
+  color: #12163F;
+      font-family: oswald;
+      margin: 0;
+      font-family: oswald;
+      text-transform: uppercase;
+      top: 0rem;
+      font-size: 4rem;
+      position: absolute;
+      left: 15rem;
 }
 
 
@@ -716,17 +724,7 @@ font-size: 1rem;
 .highScore{
       margin-top: -2rem;
 }
-table{
-  box-shadow: 0 7px 52px #121940;
-  color: #fff;
-  background: #127da7;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  top: 5.5rem;
-  position: absolute;
-  right: 14rem;
-}
+
 button#backGame{
   height: 2rem;
 width: 7rem;

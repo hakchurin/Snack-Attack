@@ -19,11 +19,16 @@ function loginInfo() {
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
         <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
-        <p id = "noSignUp">If you dont have an account <a href="#signUp">Sign Up</a></p>
+
+        <p id = "noSignUp">If you dont have an account <a href="#signUp">Sign Up</a> or <a href id ="playNow"> Play</a> now</p>
 
       </form>
     </div>
     `);
+
+    $('#playNow').on('click', function(){
+    router.navigate('game', {trigger:true});
+  });
 
   login.find('input[type="submit"]').on('click',function(evt){
     evt.preventDefault();
@@ -46,10 +51,10 @@ function loginInfo() {
   success: function(response){
     session.set('username', response.username);
     session.set('authtoken', response._kmd.authtoken);
-    router.navigate('game', {trigger:true});
     $('.username').val('');
     $('.password').val('');
     localStorage.authtoken = response._kmd.authtoken;
+    router.navigate('game', {trigger:true});
   },
   error: function(response){
   }

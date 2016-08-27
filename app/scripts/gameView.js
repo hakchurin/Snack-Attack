@@ -254,7 +254,7 @@ import session from './session';
         increaseSpeed: function() {
           window.setInterval(() => {
           this.spawnRateOfDescent = this.spawnRateOfDescent * 1.2;
-          this.spawnRate = this.spawnRate * 1.05;
+          this.spawnRate = this.spawnRate * 0.95;
           },5000)
         }
 

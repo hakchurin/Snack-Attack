@@ -16,15 +16,15 @@ function highScoreView(){
 
     <table>
     <thead>
-    <tr>
-      <th> Rank </th>
-      <th> Name </th>
-      <th> Score </th>
+      <tr>
+        <th> Rank </th>
+        <th> Name </th>
+        <th> Score </th>
       </tr>
+    </thead>
       <tbody>
 
       </tbody>
-      </thead>
       </table>
       <button id="backGame" value="Backgame"> Back to game </button>
 
@@ -36,6 +36,7 @@ highScore.find('button').on('click', function(){
 })
 scoreCollection.fetch({
   success: function(r){
+    console.log('success');
     let fixedScore = _.sortBy(r.models,function(score){
       return score.get('score');
     })
@@ -43,9 +44,9 @@ scoreCollection.fetch({
       fixedScore= fixedScore.slice(0,20);
 
       fixedScore.forEach(function(score,i){
-      let scoreLi = $(`<tr> <td id= "numbers"> ${i +1}</td> <td id="highName"> ${score.get('username')}</td> <td id="highScore">  ${score.get('score')}</td> </tr>`)
-
-      highScore.find('tbody').append(scoreLi);
+        let scoreLi = $(`<tr> <td id= "numbers"> ${i +1}</td> <td id="highName"> ${score.get('username')}</td> <td id="highScore">  ${score.get('score')}</td> </tr>`)
+        console.log(scoreLi);
+        highScore.find('tbody').append(scoreLi);
     })
 
   }

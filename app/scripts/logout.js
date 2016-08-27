@@ -7,6 +7,7 @@ import session from './session';
 
 function logoutInfo() {
   let navBtn;
+  console.log(localStorage.getItem('authtoken'));
   if (localStorage.getItem('authtoken')){
   navBtn = $(`
       <div class="logout">
