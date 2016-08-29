@@ -12,7 +12,8 @@ body {
   font-family: oswald;
   font-size: 2rem;
   margin-left: 6rem;
-  margin-top: 18rem; }
+  margin-top: 18rem;
+  color: #12163F; }
 
 h1 {
   font-family: oswald;
@@ -277,14 +278,14 @@ button {
 i#pause {
   font-size: 2rem;
   color: white;
-  top: 2.5rem;
+  top: 3rem;
   margin-left: 2.5rem;
   position: absolute; }
 
 i#play {
   font-size: 2rem;
   color: white;
-  top: 2.5rem;
+  top: 3rem;
   margin-left: 1rem;
   position: absolute; }
 
@@ -293,7 +294,7 @@ i#play {
 
 input#logoutSubmit {
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 5rem;
   margin-left: 1rem;
   border-radius: 0.5rem;
   height: 2rem;
@@ -341,7 +342,7 @@ input#loginBtn {
 button#backGame {
   position: absolute;
   top: 41rem;
-  margin-left: 1rem;
+  margin-left: 4rem;
   border-radius: 0.5rem;
   height: 3rem;
   width: 9rem;
@@ -353,6 +354,9 @@ button#backGame {
   button#backGame:hover {
     background-color: white;
     color: #127DA7; }
+
+#leaderTitle {
+  color: #12163F; }
 
 .highScore {
   background: radial-gradient(ellipse farthest-corner at center top, #2196F3 0%, #fdf4a1 100%);
@@ -366,12 +370,12 @@ table {
   box-shadow: 0 7px 52px #121940;
   color: #fff;
   background: #127da7;
-  width: 50%;
+  width: 33%;
   margin: 0 auto;
   text-align: center;
-  top: 6rem;
+  top: 9rem;
   position: absolute;
-  left: 13rem; }
+  left: 27rem; }
 
 tr {
   font-weight: 500; }
@@ -408,7 +412,7 @@ td#highName {
   font-size: 2rem;
   left: 3rem;
   position: absolute;
-  top: 0.2rem;
+  top: 0.4rem;
   color: #12163F; }
 
 #volOff {
@@ -416,7 +420,7 @@ td#highName {
   font-size: 2rem;
   left: 3rem;
   position: absolute;
-  top: 0.2rem;
+  top: 0.4rem;
   color: #12163F; }
 
 i#leftArrow {
@@ -532,12 +536,12 @@ i#rightArrow {
   margin: 0;
   font-family: oswald;
   text-transform: uppercase;
-  top: 0rem;
+  top: 3rem;
   font-size: 4rem;
   position: absolute;
-  left: 15rem; }
+  left: 29rem; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   body {
     background-repeat: no-repeat;
     background-position: center center;
@@ -547,12 +551,116 @@ i#rightArrow {
     background-color: #127DA7;
     width: 100%; }
 
-  i#pause {
-    font-size: 1rem;
-    left: 0rem; }
+  input#logoutSubmit {
+    height: 1.5rem;
+    width: 4rem;
+    font-size: 0.8rem; }
 
-  i#play {
+  input#leaderboard {
+    right: 28rem;
+    width: 6.5rem;
+    height: 2.5rem;
+    font-size: .9rem;
+    top: 0.5rem; }
+
+  p#timer {
+    right: 19rem;
+    font-size: 1.5rem; }
+
+  p#footerScore {
+    right: 10rem;
+    font-size: 1.5rem;
+    width: 6rem;
+    top: 1.5rem; }
+
+  p#lives {
+    right: 3rem;
+    font-size: 1.5rem; }
+
+  .StartScreen {
+    width: 29rem;
+    right: 8rem; }
+
+  #snackAttack {
+    font-size: 3rem;
+    left: 3.5rem;
+    top: 0rem; }
+
+  #instructions {
+    font-size: 1rem;
+    right: 1rem; }
+
+  i#leftArrow {
+    font-size: 3rem;
+    top: 19rem;
+    left: 9.5rem; }
+
+  i#rightArrow {
+    font-size: 3rem;
+    top: 19rem;
+    right: 9.5rem; }
+
+  button#startBtn {
+    width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    left: 10.5rem; }
+
+  #instructions {
+    font-size: 1rem;
+    right: 2rem;
+    margin-left: 3rem; }
+
+  input#signUpSubmit {
+    width: 6rem;
+    top: 18rem;
+    right: 21rem; }
+
+  p#backToLogin {
+    top: 32.5rem;
+    position: absolute;
+    right: 21rem;
+    font-family: avenir; }
+
+  .FinishScreen {
+    width: 29rem;
+    right: 8rem; }
+
+  #gameOver {
+    font-size: 4rem;
+    left: 5.5rem; }
+
+  p#highScore {
+    font-size: 2rem;
+    margin-left: 5rem;
+    width: 100%; }
+
+  p#high {
+    position: absolute;
+    margin-left: 14rem;
+    bottom: -1rem;
     font-size: 1rem; }
+
+  .highScore {
+    margin-top: -2rem; }
+
+  #score {
+    position: absolute;
+    left: 0;
+    font-family: oswald;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 18rem;
+    color: #12163F; } }
+@media screen and (max-width: 600px) {
+  body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; }
+
+  #footer {
+    background-color: #127DA7;
+    width: 100%; }
 
   input#logoutSubmit {
     height: 1.5rem;
@@ -617,9 +725,6 @@ i#rightArrow {
     font-size: 4rem;
     left: 2.5rem; }
 
-  #score {
-    font-size: 1rem; }
-
   p#highScore {
     font-size: 1rem;
     margin-left: 5rem;
@@ -633,11 +738,6 @@ i#rightArrow {
 
   .highScore {
     margin-top: -2rem; }
-
-  button#backGame {
-    height: 2rem;
-    width: 7rem;
-    font-size: 0.8rem; }
 
   #leader {
     color: #12163F;

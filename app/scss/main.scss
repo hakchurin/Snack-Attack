@@ -18,7 +18,9 @@ body {
   font-size: 2rem;
   margin-left: 6rem;
   margin-top: 18rem;
+  color:#12163F;
 }
+
 
 h1{
   font-family: oswald;
@@ -316,7 +318,7 @@ border: none;
 i#pause{
   font-size: 2rem;
   color: white;
-  top: 2.5rem;
+  top: 3rem;
   margin-left: 2.5rem;
   position: absolute;
 }
@@ -324,11 +326,10 @@ i#pause{
 i#play{
   font-size: 2rem;
   color: white;
-  top: 2.5rem;
+  top: 3rem;
   margin-left: 1rem;
   position: absolute;
 }
-
 
 
 
@@ -339,7 +340,7 @@ i#play{
 
 input#logoutSubmit{
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 5rem;
   margin-left: 1rem;
   border-radius: 0.5rem;
   height: 2rem;
@@ -394,16 +395,16 @@ input#loginBtn{
 
 button#backGame{
   position: absolute;
-    top: 41rem;
-    margin-left: 1rem;
-    border-radius: 0.5rem;
-    height: 3rem;
-    width: 9rem;
-    font-size: 1rem;
-    font-family: avenir;
-    background-color: #127DA7;
-    color: white;
-    border: 2px solid #127DA7;
+  top: 41rem;
+  margin-left: 4rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+  width: 9rem;
+  font-size: 1rem;
+  font-family: avenir;
+  background-color: #127DA7;
+  color: white;
+  border: 2px solid #127DA7;
     &:hover{
         background-color: white;
         color:#127DA7;
@@ -411,6 +412,9 @@ button#backGame{
         }
 }
 
+#leaderTitle{
+  color:#12163F;
+}
 
 
 
@@ -428,15 +432,15 @@ thead{
 }
 
 table {
-  box-shadow: 0 7px 52px rgb(18, 25, 64);
-  color: #fff;
-  background: rgba(18,125,167,1.3);
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  top: 6rem;
-position: absolute;
-left: 13rem;
+  box-shadow: 0 7px 52px #121940;
+      color: #fff;
+      background: #127da7;
+      width: 33%;
+      margin: 0 auto;
+      text-align: center;
+      top: 9rem;
+      position: absolute;
+      left: 27rem;
 }
 
 tr{
@@ -487,7 +491,7 @@ td#numbers{
   font-size: 2rem;
     left: 3rem;
     position: absolute;
-    top: 0.2rem;
+    top: 0.4rem;
     color:#12163F;
 
 
@@ -498,7 +502,7 @@ td#numbers{
   font-size: 2rem;
       left: 3rem;
       position: absolute;
-      top: 0.2rem;
+      top: 0.4rem;
 color:#12163F;
 }
 
@@ -616,16 +620,132 @@ text-transform: uppercase;
 
 #leader{
   color: #12163F;
-      font-family: oswald;
-      margin: 0;
-      font-family: oswald;
-      text-transform: uppercase;
-      top: 0rem;
-      font-size: 4rem;
-      position: absolute;
-      left: 15rem;
+  font-family: oswald;
+  margin: 0;
+  font-family: oswald;
+  text-transform: uppercase;
+  top: 3rem;
+  font-size: 4rem;
+  position: absolute;
+  left: 29rem;
 }
 
+
+@media screen and (max-width: 750px){
+
+  body{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  #footer{
+    background-color: #127DA7;
+    width:100%;
+  }
+  input#logoutSubmit{
+    height: 1.5rem;
+    width: 4rem;
+    font-size: 0.8rem;
+  }
+  input#leaderboard{
+    right: 28rem;
+    width: 6.5rem;
+    height: 2.5rem;
+    font-size: .9rem;
+    top: 0.5rem;
+  }
+  p#timer{
+    right: 19rem;
+  font-size: 1.5rem;
+  }
+  p#footerScore{
+    right: 10rem;
+  font-size: 1.5rem;
+  width: 6rem;
+  top: 1.5rem;
+  }
+  p#lives{
+    right: 3rem;
+  font-size: 1.5rem;
+  }
+  .StartScreen{
+    width: 29rem;
+  right: 8rem;
+  }
+  #snackAttack{
+    font-size: 3rem;
+  left: 3.5rem;
+  top: 0rem;
+  }
+  #instructions{
+    font-size:1rem;
+        right: 1rem;
+  }
+  i#leftArrow{
+    font-size: 3rem;
+  top: 19rem;
+  left: 9.5rem;
+  }
+  i#rightArrow{
+    font-size: 3rem;
+  top: 19rem;
+  right: 9.5rem;
+  }
+  button#startBtn{
+    width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+  left: 10.5rem;
+  }
+  #instructions{
+    font-size: 1rem;
+right: 2rem;
+margin-left: 3rem;
+  }
+  input#signUpSubmit{
+    width: 6rem;
+  top: 18rem;
+  right: 21rem;
+  }
+  p#backToLogin{
+    top: 32.5rem;
+    position: absolute;
+    right: 21rem;
+    font-family: avenir;
+  }
+  .FinishScreen{
+    width: 29rem;
+  right: 8rem;
+  }
+  #gameOver{
+    font-size: 4rem;
+    left: 5.5rem;
+  }
+
+  p#highScore{
+    font-size: 2rem;
+  margin-left: 5rem;
+  width: 100%;
+  }
+  p#high{
+    position: absolute;
+  margin-left: 14rem;
+  bottom: -1rem;
+  font-size: 1rem;
+  }
+  .highScore{
+        margin-top: -2rem;
+  }
+  #score{
+    position: absolute;
+    left: 0;
+    font-family: oswald;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: 18rem;
+    color: #12163F;
+  }
+}
 
 @media screen and (max-width: 600px){
   body {
@@ -637,13 +757,8 @@ text-transform: uppercase;
     background-color: #127DA7;
     width:100%;
   }
-  i#pause{
-    font-size: 1rem;
-    left: 0rem;
-  }
-  i#play{
-    font-size:1rem;
-  }
+
+
   input#logoutSubmit{
     height: 1.5rem;
 width: 4rem;
@@ -707,9 +822,7 @@ button#startBtn{
   font-size: 4rem;
   left: 2.5rem;
 }
-#score{
-  font-size:1rem;
-}
+
 p#highScore{
   font-size: 1rem;
 margin-left: 5rem;
@@ -725,11 +838,7 @@ font-size: 1rem;
       margin-top: -2rem;
 }
 
-button#backGame{
-  height: 2rem;
-width: 7rem;
-font-size: 0.8rem;
-}
+
 #leader{
   color: #12163F;
 font-family: oswald;

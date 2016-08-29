@@ -16,7 +16,7 @@ function highScoreView(){
 
     <table>
     <thead>
-      <tr>
+      <tr id ="leaderTitle">
         <th> Rank </th>
         <th> Name </th>
         <th> Score </th>
