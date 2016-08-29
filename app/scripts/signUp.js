@@ -23,6 +23,8 @@ function signUpInfo() {
     <input type="text" name="title" class="signUsername" placeholder="username">
 
     <input type="password" name="title" class="signPassword" placeholder="password">
+    <p id = "backToLogin">Back to <a href="#login">Login</a> </p>
+
     <input type="submit" id="signUpSubmit" class="submit" name="submit" value="submit">
     </form>
     </div>
