@@ -14,16 +14,19 @@ var ctx = canvas.getContext("2d");
 function loginInfo() {
   let login = $(`
     <div class="loginPage">
+    <h2 id="loginHead"> Login </h2>
+
       <form class= "loginForm">
-        <h2 id="loginHead"> Login </h2>
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
+        </form>
+
+        <div id="loginNav">
         <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
-
-        <p id = "noSignUp">If you dont have an account <a href="#signUp">Sign Up</a> or <a href id ="playNow"> Play</a> now</p>
-
-      </form>
+        <p id="signInfo">If you dont have an account <a href="#signUp">Sign Up</a> or <a href id ="playNow"> Play</a> now</p>
+        </div>
     </div>
+
     `);
 
     $('#playNow').on('click', function(){

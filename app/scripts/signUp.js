@@ -14,20 +14,21 @@ import session from './session';
 
 function signUpInfo() {
   let signUp = $(`
-    <div id="signUp">
-    <form class = "signUp">
-    <h1 id= "SignUp"> Sign Up </h1>
+        <div id="signUp">
+        <h1 id= "SignUp"> Sign Up </h1>
 
-    <input type="text" name="title" class="name" placeholder="name">
+          <form class = "signUp">
+            <input type="text" name="title" class="name" placeholder="name">
+            <input type="text" name="title" class="signUsername" placeholder="username">
+            <input type="password" name="title" class="signPassword" placeholder="password">
+          </form>
 
-    <input type="text" name="title" class="signUsername" placeholder="username">
+          <div id="signNav">
+        <input type="submit" id="signUpSubmit" class="submit" name="submit" value="submit">
+        <p id = "backLogin">Back to <a href="#login">Login</a> </p>
 
-    <input type="password" name="title" class="signPassword" placeholder="password">
-    <p id = "backToLogin">Back to <a href="#login">Login</a> </p>
-
-    <input type="submit" id="signUpSubmit" class="submit" name="submit" value="submit">
-    </form>
-    </div>
+        </div>
+        </div>
     `);
     signUp.find('input[type="submit"]').on('click', function(evt){
       evt.preventDefault();

@@ -15,10 +15,10 @@ function endGameModal(){
     <h1 id="gameOver"> Game Over </h1>
     <div id="images"> </div>
     <div id="scores">
-    <div id="wrapper">
-      <p id="score"> Your score was: </p>
-      <p id="highScore"> High Score:  </p>
-    </div>
+
+      <p id="score">Your score was: </p>
+      <p id="highScore">High Score:  </p>
+
     </div>
     <button id="restartBtn" value="Play Again"> Play Again </button>
     </div>
@@ -51,9 +51,12 @@ function endGameModal(){
           fixedScore = fixedScore.reverse();
           fixedScore = fixedScore.slice(0,1);
           fixedScore.forEach(function(score) {
-            let highScore = $(`<p id="high">${score.get('score')}</p>`)
-            console.log(score.get('score'));
-            endModal.find('#wrapper').append(highScore);
+            endModal.find('#highScore').html(`High Score: ${score.get('score')}`)
+
+
+            // let highScore = $(`<p id="high">${score.get('score')}</p>`)
+            // console.log(score.get('score'));
+            // endModal.find('#wrapper').append(highScore);
           })
 
       }

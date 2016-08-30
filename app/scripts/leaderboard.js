@@ -12,22 +12,25 @@ import router from './router';
 function highScoreView(){
   let highScore = $(`
     <div class="highScore">
+      <div id="leadWrap">
     <h1 id="leader"> Leaderboard </h1>
 
     <table>
-    <thead>
-      <tr id ="leaderTitle">
-        <th> Rank </th>
-        <th> Name </th>
-        <th> Score </th>
-      </tr>
-    </thead>
-      <tbody>
+          <thead>
+            <tr id ="leaderTitle">
+              <th> Rank </th>
+              <th> Name </th>
+              <th> Score </th>
+            </tr>
+          </thead>
 
+      <tbody>
       </tbody>
       </table>
+      </div>
+      <div id="leadBtn">
       <button id="backGame" value="Backgame"> Back to game </button>
-
+      </div>
     </div>
     `);
 

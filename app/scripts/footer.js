@@ -17,12 +17,11 @@ import logoutInfo from './logout';
               </div>
 
               <input type="submit" id="leaderboard" name="Leaderboard" value="Leaderboard">
-
               <p id="timer"></p>
+              <div id="settings">
               <p id ="footerScore">Current score: </p>
               <p id= "lives"> </p>
-
-
+              </div>
 
             </div>
             `);

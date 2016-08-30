@@ -1,4 +1,4 @@
-
+//
 
 body {
     // background-color: ivory;
@@ -12,13 +12,10 @@ body {
 
 
 #score{
-  position: absolute;
-  left: 0;
   font-family: oswald;
   font-size: 2rem;
-  margin-left: 6rem;
-  margin-top: 20.5rem;
   color: #12163F;
+  margin-right: 100px;
 }
 
 
@@ -30,16 +27,17 @@ color: white;
 }
 .FinishScreen {
   text-align: center;
-width: 750px;
-height: 500px;
-border: 2px solid #127DA7;
-background-color: white;
-position: relative;
-margin-left: 34rem;
-bottom: 75rem;
+      width: 700px;
+      height: 500px;
+      border: 2px solid #127DA7;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -65%);
+
  }
  button#restartBtn{
-    bottom: 2rem;
     width: 9rem;
    height: 3.5rem;
    border-radius: 0.5rem;
@@ -48,8 +46,7 @@ bottom: 75rem;
    background-color: #127DA7;
    color: white;
    border: 2px solid #127DA7;
-   position: relative;
-   right: 0rem;
+
  &:hover {
     background-color: white;
     color:#127DA7;
@@ -82,17 +79,21 @@ box-sizing: border-box;
 
 .StartScreen {
   text-align: center;
-      width: 750px;
-      height: 500px;
-      border: 2px solid #127DA7;
-      background-color: white;
-      position: relative;
-      margin-left: 34rem;
-      bottom: 75rem;
+  width: 700px;
+  height: 500px;
+  border: 2px solid #127DA7;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-65%);
  }
 
+div#playPause {
+      transform: translateY(50%);
+}
 button#startBtn{
-  bottom: 13rem;
+  transform: translateY(75%);
   width: 9rem;
   height: 3.5rem;
   border-radius: 0.5rem;
@@ -101,8 +102,7 @@ button#startBtn{
   background-color: #127DA7;
   color: white;
   border: 2px solid #127DA7;
-  position: relative;
-  right: 0rem;
+
  &:hover{
      background-color: white;
      color:#127DA7;
@@ -124,6 +124,7 @@ color: white;
  }
 
  p#footerScore{
+       margin-right: 5rem;
      color: white;
      font-family: oswald;
      font-size: 2.5rem;
@@ -134,49 +135,46 @@ color: white;
  }
 
 .loginPage{
-border: 2px solid #127DA7;
-width: 20rem;
-height: 23rem;
-margin: 0 auto;
-margin-top: 9rem;
-background: white;
+  border: 2px solid #127DA7;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
 }
 
-input#loginSubmit{
-  position: absolute;
-  margin-top: 9rem;
-  margin-left: 6rem;
+input#loginSubmit {
   border-radius: 0.5rem;
-  height: 2rem;
-  width: 8rem;
-  font-size: 1rem;
-  font-family: avenir;
-  background-color: #127DA7;
-  color: white;
-  border: 2px solid #127DA7;
+      height: 2rem;
+      width: 8rem;
+      font-size: 1rem;
+      font-family: avenir;
+      background-color: #127DA7;
+      color: white;
+      border: 2px solid #127DA7;
+      margin-bottom: 20px;
 &:hover{
     background-color: white;
     color:#127DA7;
     }
-
 }
 
 input.username{
-  position: absolute;
-margin-left: 4rem;
-border-radius: .5rem;
-height: 2rem;
-width: 12rem;
-background: #EAEAEA;
-font-size: 1.5rem;
-font-family: avenir;
-margin-top: 1rem;
+  border-radius: .5rem;
+  height: 2rem;
+  width: 12rem;
+  background: #EAEAEA;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: avenir;
 }
 
-input.password{
-  position: absolute;
-  margin-top: 5rem;
-  margin-left: 4rem;
+input.password {
   border-radius: .5rem;
   height: 2rem;
   width: 12rem;
@@ -185,11 +183,22 @@ input.password{
   font-family: avenir;
 }
 
+form.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+div#loginNav {
+align-items: center;
+flex-direction: column;
+display: flex;
+margin-top: 40px;
+}
+
 h2#loginHead{
   text-align: center;
 font-family: oswald;
 font-size: 3rem;
-margin-top: 8px;
 color:#127DA7;
 }
 
@@ -198,30 +207,40 @@ color:#127DA7;
   text-align: center;
 }
 form.signUp{
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#signInfo{
+  font-family: avenir;
+    font-size: 1rem;
 }
 
 div#signUp{
   border: 2px solid #127DA7;
-  width: 23rem;
-  height: 30rem;
+  width: 40%;
   margin: 0 auto;
-  margin-top: 9rem;
-  background: white;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
 }
 
 input#signUpSubmit{
-  position: absolute;
-  margin-top: 18rem;
-  margin-left: 7rem;
   border-radius: 0.5rem;
   height: 2rem;
   width: 8rem;
   font-size: 1rem;
   font-family: avenir;
   background-color: #127DA7;
-   color: white;
-   border: 2px solid #127DA7;
+  color: white;
+  border: 2px solid #127DA7;
+  margin-top: 20px;
 &:hover{
     background-color: white;
     color:#127DA7;
@@ -229,39 +248,33 @@ input#signUpSubmit{
 
 }
 input.name{
-  position: absolute;
-  margin-left: 5rem;
-  border-radius: .5rem;
-  height: 2rem;
-  width: 12rem;
-  background: #EAEAEA;
-  font-size: 1.5rem;
-  font-family: avenir;
-  margin-top: 2rem;
+border-radius: .5rem;
+height: 2rem;
+width: 12rem;
+background: #EAEAEA;
+font-size: 1.5rem;
+margin-bottom: 20px;
+font-family: avenir;
 }
 
 input.signUsername{
-  position: absolute;
-  margin-left: 5rem;
   border-radius: .5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
   font-size: 1.5rem;
   font-family: avenir;
-  margin-top:7rem;
+  margin-bottom: 20px;
 }
 
-input.signPassword{
-  position: absolute;
-  margin-left: 5rem;
+input.signPassword {
   border-radius: .5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
   font-size: 1.5rem;
   font-family: avenir;
-  margin-top: 12rem;
+
 }
 
 h3#name{
@@ -283,7 +296,7 @@ h3#signPassword{
 h1#SignUp{
   text-align: center;
   font-family: oswald;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color:#127DA7;
 }
 
@@ -358,11 +371,10 @@ justify-content: center;
 }
 
 p#highScore{
-  margin-left: 50px;
+color: #12163F;
   font-family: oswald;
   font-size: 2rem;
-  margin: 10px 0;
-  margin-left: 50px;
+
 
 }
 
@@ -380,9 +392,6 @@ p#noSignUp{
 
 
 input#loginBtn{
-  position: absolute;
-      margin-top: 2.5rem;
-      margin-left: 1rem;
       border-radius: 0.5rem;
       height: 2rem;
       width: 5rem;
@@ -395,9 +404,7 @@ input#loginBtn{
 
 
 button#backGame{
-  position: absolute;
-  top: 41rem;
-  margin-left: 4rem;
+
   border-radius: 0.5rem;
   height: 3rem;
   width: 9rem;
@@ -439,9 +446,7 @@ table {
       width: 33%;
       margin: 0 auto;
       text-align: center;
-      top: 9rem;
-      position: absolute;
-      left: 27rem;
+
 }
 
 tr{
@@ -506,9 +511,7 @@ color:#12163F;
 
 i#leftArrow{
   font-size: 3.5rem;
-  position: relative;
-  bottom: 13.5rem;
-  right: 19.5rem;
+
   color: #12163F;
     &:hover{
       color:#468AC9;
@@ -518,9 +521,7 @@ i#leftArrow{
 i#rightArrow{
   color: #12163F;
     font-size: 3.5rem;
-    position: relative;
-    bottom: 13.5rem;
-    right: 18rem;
+
   &:hover{
     color:#468AC9;
   }
@@ -530,17 +531,17 @@ i#rightArrow{
 
 div#images{
   img {
-    height: 200px;
+    height: 150px;
   }
 
 }
 
-
+div#bannerWrapper{
+  transform: translateY(18%);
+}
 img#banner{
-  height: 38vh;
-  bottom: 15.7rem;
-  position: relative;
-  left: 5rem;
+  height: 60%;
+  width: 70%;
 }
 
 @-webkit-keyframes shake {
@@ -589,21 +590,17 @@ img#banner{
 
 
 
-#snackAttack{
+#snackAttack {
+  transform: translateY(10%);
   font-family: overmuch;
-    color: #127DA7;
-    bottom: 3rem;
-    font-size: 5.5rem;
-    position: relative;
-    left: 0.5rem;
-
+  color: #127DA7;
+  font-size: 5.5rem;
+  margin: 0 auto;
 }
 
 
 #instructions{
-  position: relative;
-  top: 7.5rem;
-  right: -0.5rem;
+
   color: #127DA7;
   font-family: avenir;
   font-weight: 500;
@@ -624,12 +621,23 @@ img#banner{
   margin: 0;
   font-family: oswald;
   text-transform: uppercase;
-  top: 3rem;
   font-size: 4rem;
-  position: absolute;
-  left: 29rem;
 }
 
+div#leadBtn{
+    position: absolute;
+    bottom: 2rem;
+    left: 6rem;
+}
+
+p#backLogin{
+  font-family: avenir;
+  text-align: center;
+}
+
+#settings {
+  display: flex;
+}
 
 @media screen and (max-width: 750px){
 
@@ -665,33 +673,36 @@ img#banner{
   font-size: 1.5rem;
   }
   .StartScreen{
-    width: 29rem;
-  right: 8rem;
+    width: 80%;
+    height: 55%;
   }
   #snackAttack{
-    font-size: 3rem;
-  left: 3.5rem;
-  top: 0rem;
+    font-size: 2.5rem;
+  left: 2rem;
+  margin-bottom: 29px;
+  margin-top: 7px;
   }
+  div#bannerWrapper {
+    margin-bottom: 17px;
+    }
   #instructions{
-    font-size:1rem;
-        right: 1rem;
+    padding: 0;
+  font-size: 1rem;
+  margin: 0 auto;
   }
   i#leftArrow{
     font-size: 3rem;
-  top: 19rem;
-  left: 9.5rem;
+
   }
   i#rightArrow{
     font-size: 3rem;
-  top: 19rem;
-  right: 9.5rem;
+
   }
   button#startBtn{
     width: 8rem;
   height: 3rem;
   font-size: 1rem;
-  left: 10.5rem;
+
   }
   #instructions{
     font-size: 1rem;
@@ -700,18 +711,14 @@ margin-left: 3rem;
   }
   input#signUpSubmit{
     width: 6rem;
-  top: 18rem;
-  right: 21rem;
+
   }
-  p#backToLogin{
-    top: 32.5rem;
-    position: absolute;
-    right: 21rem;
-    font-family: avenir;
-  }
+
+
+
   .FinishScreen{
-    width: 29rem;
-  right: 8rem;
+    width: 80%;
+    margin: 0 auto;
   }
   #gameOver{
     font-size: 4rem;
@@ -719,24 +726,20 @@ margin-left: 3rem;
   }
 
   p#highScore{
-    font-size: 2rem;
-  margin-left: 5rem;
-  width: 100%;
+    font-size: 1.5rem;
+    width: 100%;
+    color: #12163F;
   }
   p#high{
     font-family: oswald;
-      font-size: 2rem;
-      margin: 10px 0;
+      font-size: 1.5rem;
   }
-  .highScore{
-        margin-top: -2rem;
-  }
+
   #score{
-    position: absolute;
       font-family: oswald;
       font-size: 2rem;
       color: #12163F;
-      margin: 10px 0;
+      margin-right: 100px;
   }
 }
 
@@ -751,23 +754,34 @@ margin-left: 3rem;
     width:100%;
   }
 
+i#pause {
+  font-size: 2rem;
+  color: white;
+}
+
+i#play {
+  font-size: 2rem;
+  color: white;
+}
 
   input#logoutSubmit{
-    height: 1.5rem;
-width: 4rem;
-    font-size: 0.8rem;
+    width: 5.5rem;
+  height: 1.5rem;
+  margin: 10px;
+  font-size: 0.7rem;
   }
   input#leaderboard{
-width: 5.5rem;
-height: 1.5rem;
-font-size: 0.7rem;
+    width: 5.5rem;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  margin-top: 4.5rem;
   }
   p#timer{
     right: 15rem;
 font-size: 1rem;
   }
   p#footerScore{
-  font-size: 1rem;
+    font-size: 1rem;
   width: 5rem;
 
   }
@@ -775,37 +789,39 @@ font-size: 1rem;
     right: 2.5rem;
   font-size: 1rem;
   }
-.StartScreen{
+.StartScreen {
   width: 23rem;
 right: 1rem;
 }
-#snackAttack{
-  font-size: 2.5rem;
-    left: 2rem;
-    top: 0rem;
-}
-#instructions{
-  font-size:1rem;
-      right: 1rem;
-}
-i#leftArrow{
-  font-size: 3.5rem;
-  position: absolute;
-  top: 18.5rem;
-  left: 15rem;
 
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0%;
+  margin: 50px;
 }
-i#rightArrow{
+#snackAttack {
+  font-size: 2.5rem;
+}
+#instructions {
+  font-size:1rem;
+  margin-right: 3rem;
+}
+
+i#leftArrow {
   font-size: 3.5rem;
-  position: absolute;
-  top: 18.5rem;
-  margin-left: 1rem;
+}
+
+i#rightArrow {
+  font-size: 3.5rem;
+
 }
 button#startBtn{
   width: 7rem;
       height: 3rem;
       font-size: 1rem;
-      left: 8rem;
+
 }
 .FinishScreen{
   width: 23rem;
@@ -817,25 +833,45 @@ button#startBtn{
 }
 
 p#highScore{
-  font-size: 1rem;
-margin-left: 5rem;
+  font-size: 1.5rem;
 width: 100%;
+color: #12163F;
 }
 p#high{
-  position: absolute;
-margin-left: 14rem;
-bottom: -1rem;
-font-size: 1rem;
+
+font-size: 1.5rem;
 }
-.highScore{
-      margin-top: -2rem;
+
+#score {
+font-size: 1.5rem;
 }
+
+
 
 
 #leader{
   color: #12163F;
-font-family: oswald;
-left: 5.3rem;
-position: absolute;
+  font-family: oswald;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-top: 2rem;
+}
+
+div#leadBtn {
+      text-align: center;
+}
+
+button#backGame {
+  height: 2rem;
+  width: 8rem;
+  text-align: center;
+  transform: translateY(75%);
+  margin-left: 2.5rem;
+}
+
+
+
+img#tomato {
+  height: 150px;
 }
 }
