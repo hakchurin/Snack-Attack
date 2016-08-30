@@ -12,7 +12,7 @@ body {
   font-family: oswald;
   font-size: 2rem;
   margin-left: 6rem;
-  margin-top: 18rem;
+  margin-top: 20.5rem;
   color: #12163F; }
 
 h1 {
@@ -23,29 +23,32 @@ h1 {
 
 .FinishScreen {
   text-align: center;
-  width: 600px;
-  height: 450px;
+  width: 750px;
+  height: 500px;
   border: 2px solid #127DA7;
   background-color: white;
-  position: absolute;
-  margin-left: 21rem;
-  bottom: 13rem; }
+  position: relative;
+  margin-left: 34rem;
+  bottom: 75rem; }
 
 button#restartBtn {
-  position: absolute;
-  margin-top: 22rem;
-  margin-left: -6rem;
+  bottom: 2rem;
+  width: 9rem;
+  height: 3.5rem;
   border-radius: 0.5rem;
-  height: 4rem;
-  width: 12rem;
   font-size: 1.5rem;
   font-family: avenir;
   background-color: #127DA7;
   color: white;
-  border: 2px solid #127DA7; }
+  border: 2px solid #127DA7;
+  position: relative;
+  right: 0rem; }
   button#restartBtn:hover {
     background-color: white;
     color: #127DA7; }
+
+img#tomato {
+  height: 23vh; }
 
 #header {
   height: 135px;
@@ -54,65 +57,59 @@ button#restartBtn {
 #footer {
   border: 2px solid #127DA7;
   height: 9rem;
-  margin-top: 35rem;
+  bottom: 0;
   width: 100%;
+  display: flex;
   position: absolute;
-  background: #127DA7; }
+  background: #127DA7;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box; }
 
 .StartScreen {
   text-align: center;
-  width: 600px;
-  height: 450px;
+  width: 750px;
+  height: 500px;
   border: 2px solid #127DA7;
   background-color: white;
-  position: absolute;
-  margin-left: 21rem;
-  bottom: 13rem; }
+  position: relative;
+  margin-left: 34rem;
+  bottom: 75rem; }
 
 button#startBtn {
-  top: 0;
-  margin-top: 23rem;
-  width: 12rem;
-  height: 4rem;
+  bottom: 13rem;
+  width: 9rem;
+  height: 3.5rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
   font-family: avenir;
   background-color: #127DA7;
   color: white;
   border: 2px solid #127DA7;
-  position: absolute;
-  left: 13rem; }
+  position: relative;
+  right: 0rem; }
   button#startBtn:hover {
     background-color: white;
     color: #127DA7; }
 
 p#timer {
-  position: absolute;
-  margin-left: 30rem;
-  margin-top: 3rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: oswald;
   color: white; }
 
 p#lives {
-  position: absolute;
-  margin-top: 3rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: oswald;
-  color: white;
-  margin-left: 45rem; }
+  color: white; }
 
 p#footerScore {
-  margin-left: 56rem;
-  top: 1rem;
-  position: absolute;
   color: white;
   font-family: oswald;
-  font-size: 2rem; }
+  font-size: 2.5rem; }
 
 input#pause {
-  margin-top: 0rem;
-  position: absolute; }
+  margin-top: 0rem; }
 
 .loginPage {
   border: 2px solid #127DA7;
@@ -253,20 +250,16 @@ h1#SignUp {
 input#leaderboard {
   color: white;
   border: 2px solid white;
-  position: absolute;
-  margin-top: 4rem;
   color: white;
   border-radius: 8px;
   background-color: #127DA7;
   border: 2px solid white;
-  height: 3rem;
-  width: 10rem;
-  font-size: 1.3rem;
+  height: 4rem;
+  width: 11rem;
+  font-size: 1.6rem;
   font-family: oswald;
   letter-spacing: .5px;
-  text-transform: uppercase;
-  margin-left: 11.5rem;
-  margin-top: 2.7rem; }
+  text-transform: uppercase; }
   input#leaderboard:hover {
     background-color: white;
     color: #127DA7; }
@@ -276,26 +269,24 @@ button {
   border: none; }
 
 i#pause {
-  font-size: 2rem;
-  color: white;
-  top: 3rem;
-  margin-left: 2.5rem;
-  position: absolute; }
+  font-size: 3rem;
+  color: white; }
 
 i#play {
-  font-size: 2rem;
-  color: white;
-  top: 3rem;
-  margin-left: 1rem;
+  font-size: 3rem;
+  color: white; }
+
+img#topDog {
+  height: 50vh;
+  width: 30vw;
+  left: 6.5rem;
+  top: 2rem;
   position: absolute; }
 
 #fryingPan {
   display: none; }
 
 input#logoutSubmit {
-  position: absolute;
-  margin-top: 5rem;
-  margin-left: 1rem;
   border-radius: 0.5rem;
   height: 2rem;
   width: 5rem;
@@ -308,18 +299,21 @@ input#logoutSubmit {
     background-color: white;
     color: #127DA7; }
 
+div#scores {
+  display: flex;
+  justify-content: center; }
+
 p#highScore {
-  margin-left: 21rem;
-  top: 8rem;
+  margin-left: 50px;
   font-family: oswald;
   font-size: 2rem;
-  margin-top: 10.8rem;
-  position: absolute; }
+  margin: 10px 0;
+  margin-left: 50px; }
 
 p#high {
-  position: absolute;
-  margin-left: 10rem;
-  top: -2rem; }
+  position: relative;
+  left: 7.5rem;
+  bottom: 4.6rem; }
 
 p#noSignUp {
   margin-top: 15rem;
@@ -328,7 +322,7 @@ p#noSignUp {
 
 input#loginBtn {
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   margin-left: 1rem;
   border-radius: 0.5rem;
   height: 2rem;
@@ -408,32 +402,41 @@ td#highName {
   color: white; }
 
 #volUp {
-  display: none;
   font-size: 2rem;
-  left: 3rem;
-  position: absolute;
-  top: 0.4rem;
+  display: none;
   color: #12163F; }
 
 #volOff {
-  display: none;
   font-size: 2rem;
-  left: 3rem;
-  position: absolute;
-  top: 0.4rem;
+  display: none;
   color: #12163F; }
 
 i#leftArrow {
-  font-size: 5rem;
-  position: absolute;
-  top: 17rem;
-  left: 11rem; }
+  font-size: 3.5rem;
+  position: relative;
+  bottom: 13.5rem;
+  right: 19.5rem;
+  color: #12163F; }
+  i#leftArrow:hover {
+    color: #468AC9; }
 
 i#rightArrow {
-  font-size: 5rem;
-  position: absolute;
-  top: 17rem;
-  margin-left: 4rem; }
+  color: #12163F;
+  font-size: 3.5rem;
+  position: relative;
+  bottom: 13.5rem;
+  right: 18rem; }
+  i#rightArrow:hover {
+    color: #468AC9; }
+
+div#images img {
+  height: 200px; }
+
+img#banner {
+  height: 38vh;
+  bottom: 15.7rem;
+  position: relative;
+  left: 5rem; }
 
 @-webkit-keyframes shake {
   0% {
@@ -495,40 +498,28 @@ i#rightArrow {
   -webkit-animation-timing-function: linear;
   -webkit-transform-origin: 50% 100%; }
 
-#rightArrow {
-  color: #12163F; }
-  #rightArrow:hover {
-    color: #468AC9; }
-
-#leftArrow {
-  color: #12163F; }
-  #leftArrow:hover {
-    color: #468AC9; }
-
 #snackAttack {
   font-family: overmuch;
   color: #127DA7;
-  bottom: 19rem;
-  font-size: 4.5rem;
-  position: absolute;
-  left: 2rem; }
+  bottom: 3rem;
+  font-size: 5.5rem;
+  position: relative;
+  left: 0.5rem; }
 
 #instructions {
-  position: absolute;
-  top: 14rem;
-  right: 3.5rem;
+  position: relative;
+  top: 7.5rem;
+  right: -0.5rem;
   color: #127DA7;
   font-family: avenir;
   font-weight: 500; }
 
 #gameOver {
   color: #127DA7;
-  font-size: 4rem;
+  font-size: 5.5rem;
   font-family: oswald;
-  position: absolute;
-  left: 10rem;
-  bottom: 19rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 20px 0; }
 
 #leader {
   color: #12163F;
@@ -557,24 +548,19 @@ i#rightArrow {
     font-size: 0.8rem; }
 
   input#leaderboard {
-    right: 28rem;
     width: 6.5rem;
     height: 2.5rem;
-    font-size: .9rem;
-    top: 0.5rem; }
+    font-size: .9rem; }
 
   p#timer {
     right: 19rem;
     font-size: 1.5rem; }
 
   p#footerScore {
-    right: 10rem;
     font-size: 1.5rem;
-    width: 6rem;
-    top: 1.5rem; }
+    width: 6rem; }
 
   p#lives {
-    right: 3rem;
     font-size: 1.5rem; }
 
   .StartScreen {
@@ -636,22 +622,19 @@ i#rightArrow {
     width: 100%; }
 
   p#high {
-    position: absolute;
-    margin-left: 14rem;
-    bottom: -1rem;
-    font-size: 1rem; }
+    font-family: oswald;
+    font-size: 2rem;
+    margin: 10px 0; }
 
   .highScore {
     margin-top: -2rem; }
 
   #score {
     position: absolute;
-    left: 0;
     font-family: oswald;
     font-size: 2rem;
-    margin-left: 3rem;
-    margin-top: 18rem;
-    color: #12163F; } }
+    color: #12163F;
+    margin: 10px 0; } }
 @media screen and (max-width: 600px) {
   body {
     background-repeat: no-repeat;
@@ -668,24 +651,20 @@ i#rightArrow {
     font-size: 0.8rem; }
 
   input#leaderboard {
-    right: 19rem;
     width: 5.5rem;
     height: 1.5rem;
-    font-size: 0.7rem;
-    top: 0.5rem; }
+    font-size: 0.7rem; }
 
   p#timer {
     right: 15rem;
     font-size: 1rem; }
 
   p#footerScore {
-    right: 7rem;
     font-size: 1rem;
-    width: 5rem;
-    top: 2rem; }
+    width: 5rem; }
 
   p#lives {
-    right: 3rem;
+    right: 2.5rem;
     font-size: 1rem; }
 
   .StartScreen {
@@ -702,14 +681,16 @@ i#rightArrow {
     right: 1rem; }
 
   i#leftArrow {
-    font-size: 2rem;
-    top: 20rem;
-    left: 7.5rem; }
+    font-size: 3.5rem;
+    position: absolute;
+    top: 18.5rem;
+    left: 15rem; }
 
   i#rightArrow {
-    font-size: 2rem;
-    top: 20rem;
-    right: 7.5rem; }
+    font-size: 3.5rem;
+    position: absolute;
+    top: 18.5rem;
+    margin-left: 1rem; }
 
   button#startBtn {
     width: 7rem;

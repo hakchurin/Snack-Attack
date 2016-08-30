@@ -9,6 +9,7 @@ import fillCanvas from './player';
 import FallingObject from './fallingObj';
 import scoreCollection from './scoreCollection';
 import session from './session';
+import _ from 'underscore'
 
 
     function Game(canvas) {
@@ -30,6 +31,7 @@ import session from './session';
         this.levelUp = new Audio('assets/sound/levelUp.mp3');
         this.miss = new Audio('assets/sound/miss.mp3');
 
+        scoreCollection.fetch();
 
 
 
@@ -220,9 +222,34 @@ import session from './session';
             })
 
 
+
+
+
+
+
+
+
             let endGame = () => {
                 $("#screen").hide();
                 $("#score").text("Score: " + this.score);
+                console.log($('#high'));
+
+                if (localStorage.getItem('authtoken')){
+                  let fixedScore = _.sortBy(scoreCollection.models, function(score) {
+                    return score.get('score');
+                  })
+
+                  fixedScore = fixedScore.reverse();
+                  fixedScore = fixedScore.slice(0,1);
+                  let highscore = fixedScore[0].get('score')
+
+                  if ((this.score ) > highscore) {
+                    console.log('should be high score');
+                    $('#images').empty().append('<img src="assets/images/topDog.svg" id="topDog"/>')
+                  }
+                }
+
+
                 $(".FinishScreen").show();
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 this.audio.pause();
@@ -234,6 +261,8 @@ import session from './session';
             }
             if (this.lives === 0 || this.input === 0) {
                 cancelAnimationFrame(this.tick.bind(this));
+                $('#images').empty().append('<img src="assets/images/tomato.svg" id="tomato"/>')
+
                 endGame();
             } else if (this.lives !== 0 && this.input !== 0 && !this.paused) {
                 requestAnimationFrame(this.tick.bind(this));

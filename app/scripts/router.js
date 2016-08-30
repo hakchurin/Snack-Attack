@@ -37,7 +37,9 @@ import highScoreView from './leaderboard';
     },
     gamefunction: function(){
       console.log('hi');
-      $('#container').empty().append(footerView().append(startGameModal()).append(logoutInfo()).append(endGameModal()));
+      $('#container').empty().append(footerView());
+      $('#container').append(startGameModal());
+      $('#container').append(endGameModal());
     var canvas= resetCanvas();
     var game = new Game(canvas);
 
