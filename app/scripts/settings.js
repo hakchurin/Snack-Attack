@@ -1,9 +1,5 @@
 
 
-
-
-
-
 export default {
   baseUrl: 'https://baas.kinvey.com',
   appId: 'kid_HkeAf-Mc',

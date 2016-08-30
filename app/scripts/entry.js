@@ -1,12 +1,11 @@
-// import Backbone from 'backbone';
-// import $ from 'jquery';
+
 import router from './router';
 import Backbone from 'backbone';
 import $ from 'jquery';
 import session from './session';
 import settings from './settings';
 
-//
+
 
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   if (localStorage.getItem('authtoken')) {

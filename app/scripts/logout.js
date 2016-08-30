@@ -32,7 +32,6 @@ function logoutInfo() {
       url: `https://baas.kinvey.com/user/${settings.appId}/_logout`,
       success: function() {
         localStorage.removeItem('authtoken')
-        // this.clear()
         router.navigate('login', {trigger:true});
       }
     })

@@ -15,12 +15,10 @@ function loginInfo() {
   let login = $(`
     <div class="loginPage">
     <h2 id="loginHead"> Login </h2>
-
       <form class= "loginForm">
         <input type ="text" class="username" placeholder="username" />
         <input type ="password" class="password" placeholder="password" />
         </form>
-
         <div id="loginNav">
         <input type="submit" id="loginSubmit" class="submit" name="Login" value="Login">
         <p id="signInfo">If you dont have an account <a href="#signUp">Sign Up</a> or <a href id ="playNow"> Play</a> now</p>

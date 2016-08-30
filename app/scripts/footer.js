@@ -4,6 +4,9 @@ import Backbone from 'backbone';
 import router from './router';
 import logoutInfo from './logout';
 
+
+
+
         function footerView() {
           let footer = $(`
             <div id="footer">
@@ -19,18 +22,14 @@ import logoutInfo from './logout';
               <input type="submit" id="leaderboard" name="Leaderboard" value="Leaderboard">
               <p id="timer"></p>
               <div id="settings">
-              <p id ="footerScore">Current score: </p>
-              <p id= "lives"> </p>
+                <p id ="footerScore">Current score: </p>
+                <p id= "lives"> </p>
               </div>
 
             </div>
             `);
+
             footer.find('#wrapper').append(logoutInfo())
-
-
-
-
-
 
             footer.find('#leaderboard').on('click', function(){
               router.navigate('leaderboard', {trigger:true});

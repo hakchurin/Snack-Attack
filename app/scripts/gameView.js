@@ -31,10 +31,10 @@ import _ from 'underscore'
         this.levelUp = new Audio('assets/sound/levelUp.mp3');
         this.miss = new Audio('assets/sound/miss.mp3');
 
+
+
+
         scoreCollection.fetch();
-
-
-
 
         $("#timer").text("Time: " + this.calculateTime(this.input));
         $("#footerScore").text("Current Score: " + this.score);
@@ -56,8 +56,10 @@ import _ from 'underscore'
 
         $('#volOff').show();
         $('#volOff').click(function(){
+
+
             var $this = $(this);
-        $this.toggleClass('active');
+            $this.toggleClass('active');
             if($this.hasClass('active')){
 
               $('#volUp').show();
@@ -79,13 +81,6 @@ import _ from 'underscore'
               $('#volUp').show();
             }
         });
-
-
-
-
-
-
-
 
 
 
@@ -225,10 +220,6 @@ import _ from 'underscore'
 
 
 
-
-
-
-
             let endGame = () => {
                 $("#screen").hide();
                 $("#score").text("Score: " + this.score);
@@ -286,9 +277,6 @@ import _ from 'underscore'
           this.spawnRate = this.spawnRate * 0.95;
           },5000)
         }
-
-
-
     };
 
     export default Game;

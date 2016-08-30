@@ -43,15 +43,9 @@ var img = new Image();
 
 
 
-
-
-
   };
   Player.prototype = {
       draw: function() {
-          // this.ctx.fillRect(this.center.x - this.size.x / 2,
-          //     this.center.y - this.size.y / 2,
-          //     this.size.x, this.size.y);
           ctx.drawImage(img,this.center.x - 150 ,this.center.y , this.size.x  ,this.size.y );
 
       }
@@ -59,7 +53,3 @@ var img = new Image();
   }
 
   export default Player;
-
-  //
-  // var img = document.getElementById("scream");
-  //  ctx.drawImage(img, 10, 10);

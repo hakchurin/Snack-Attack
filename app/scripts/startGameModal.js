@@ -7,8 +7,6 @@ import Backbone from 'backbone';
 
 
 
-
-
 function startGameModal(){
   let startModal = $(`
     <div class="StartScreen" style="display:none">
@@ -28,11 +26,7 @@ function startGameModal(){
     </div>
     `);
 
-
-
-
-
-
+    
     return startModal;
 }
 export default startGameModal;

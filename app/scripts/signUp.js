@@ -7,11 +7,6 @@ import session from './session';
 
 
 
-// <h3 id= "name">name</h3>
-// <h3 id="signUsername"> username </h3>
-// <h3 id="signPassword"> password </h3>
-
-
 function signUpInfo() {
   let signUp = $(`
         <div id="signUp">
@@ -49,7 +44,6 @@ function signUpInfo() {
         },
         contentType: 'application/json',
         success: function(response){
-          // response.unset('password');
           session.set('username', username);
           session.set('authtoken', response._kmd.authtoken);
           console.log('triggered');

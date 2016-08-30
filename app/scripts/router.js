@@ -23,7 +23,6 @@ import highScoreView from './leaderboard';
     },
     loginfunction: function(){
       $('#container').empty().append(loginInfo());
-      // ctx.clearRect(0, 0, canvas.width, canvas.height);
       resetCanvas();
     },
     signUpFunction: function(){

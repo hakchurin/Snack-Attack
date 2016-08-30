@@ -2,7 +2,6 @@
 
 
 
-
 var foodImages = [
   {
   id: 1,

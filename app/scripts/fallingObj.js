@@ -1,8 +1,4 @@
 
-
-
-
-
 import foodImages from './foodArray';
 
 
@@ -20,15 +16,12 @@ var ctx = canvas.getContext("2d");
           this.y = 25
           this.img.src = foodImages[Math.floor(Math.random() * foodImages.length)].url;
 
-
       }
 
       FallingObject.prototype = {
           draw: function() {
               this.y += this.spawnRateOfDescent;
               ctx.drawImage(this.img, this.x, this.y, this.size.x, this.size.y);
-
-
           }
       }
 

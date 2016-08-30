@@ -24,13 +24,3 @@ function resetCanvas() {
 
 
 export default resetCanvas;
-
-
-
-
-
-// $(document).ready(function() {});
-// window.setInterval(function(){
-//   spawnRateOfDescent += 0.5
-//   spawnRate -= spawnRate / 100 * 20;
-// },5000);
