@@ -25,7 +25,7 @@ function endGameModal(){
 
 
   var image = endGameImages[Math.floor(Math.random() * endGameImages.length)];
-  endModal.find(`#images`).append(`<img src="${image.url}"/>`);
+  endModal.find(`#images`).append(`<img src="${image.url}" id="endImg${image.id}"/>`);
 
 
     scoreCollection.fetch({

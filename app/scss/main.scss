@@ -37,15 +37,23 @@ color: white;
       transform: translate(-50%, -65%);
 
  }
+img#endImg2{
+    height: 215px;
+}
+
  button#restartBtn{
-    width: 9rem;
-   height: 3.5rem;
-   border-radius: 0.5rem;
-   font-size: 1.5rem;
-   font-family: avenir;
-   background-color: #127DA7;
-   color: white;
-   border: 2px solid #127DA7;
+   width: 9rem;
+ height: 3.5rem;
+ border-radius: 0.5rem;
+ font-size: 1.5rem;
+ font-family: avenir;
+ background-color: #127DA7;
+ color: white;
+ border: 2px solid #127DA7;
+ top: 27rem;
+ position: absolute;
+ left: 50%;
+ transform: translate(-50%);
 
  &:hover {
     background-color: white;
@@ -54,9 +62,6 @@ color: white;
  }
 
 
-img#tomato{
-  height: 165px;
-}
 
 #header{
   height: 135px;
@@ -338,11 +343,8 @@ i#play{
 }
 
 img#topDog{
-  height: 50vh;
 width: 30vw;
-left: 6.5rem;
-top: 2rem;
-position: absolute;
+
 }
 
 
@@ -368,6 +370,9 @@ input#logoutSubmit{
 div#scores{
   display: flex;
 justify-content: center;
+position: absolute;
+bottom: 4rem;
+width: 100%;
 }
 
 p#highScore{
@@ -441,16 +446,18 @@ thead{
 
 table {
   box-shadow: 0 7px 52px #121940;
-      color: #fff;
-      background: #127da7;
-      width: 33%;
-      margin: 0 auto;
-      text-align: center;
-
+  color: #fff;
+  background: #127da7;
+  width: 26%;
+  height: 75%;
+  margin: 0 auto;
+  text-align: center;
 }
+
 
 tr{
   font-weight: 500;
+  height:calc(100% / 20);
 }
 
 tbody{
@@ -482,7 +489,7 @@ td#numbers{
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         padding: 5px 44px 0rem 49px;
         margin: 0;
         background: none;
@@ -528,12 +535,23 @@ i#rightArrow{
 
 }
 
+div#leadWrap {
+      height: 100%;
+}
 
 div#images{
   img {
     height: 220px;
   }
-
+  img#tomato{
+    height: 160px;
+  }
+  img#endImg2{
+    height:245px;
+  }
+  img#topDog{
+    height: 230px;
+  }
 }
 
 div#bannerWrapper{
@@ -612,16 +630,18 @@ img#banner{
   font-size: 5.5rem;
   font-family: oswald;
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 0px 0;
 }
 
 #leader{
   color: #12163F;
   font-family: oswald;
   margin: 0;
+  padding: 20px 0;
   font-family: oswald;
   text-transform: uppercase;
   font-size: 4rem;
+  text-align: center;
 }
 
 div#leadBtn{

@@ -5,6 +5,7 @@
 var endGameImages = [{
   id: 1,
   url: '../assets/images/dimSum.svg',
+
 },
 
 {

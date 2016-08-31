@@ -29,6 +29,9 @@ h1 {
   left: 50%;
   transform: translate(-50%, -65%); }
 
+img#endImg2 {
+  height: 215px; }
+
 button#restartBtn {
   width: 9rem;
   height: 3.5rem;
@@ -37,13 +40,14 @@ button#restartBtn {
   font-family: avenir;
   background-color: #127DA7;
   color: white;
-  border: 2px solid #127DA7; }
+  border: 2px solid #127DA7;
+  top: 27rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%); }
   button#restartBtn:hover {
     background-color: white;
     color: #127DA7; }
-
-img#tomato {
-  height: 165px; }
 
 #header {
   height: 135px;
@@ -283,11 +287,7 @@ i#play {
   color: white; }
 
 img#topDog {
-  height: 50vh;
-  width: 30vw;
-  left: 6.5rem;
-  top: 2rem;
-  position: absolute; }
+  width: 30vw; }
 
 #fryingPan {
   display: none; }
@@ -307,7 +307,10 @@ input#logoutSubmit {
 
 div#scores {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  position: absolute;
+  bottom: 4rem;
+  width: 100%; }
 
 p#highScore {
   color: #12163F;
@@ -362,12 +365,14 @@ table {
   box-shadow: 0 7px 52px #121940;
   color: #fff;
   background: #127da7;
-  width: 33%;
+  width: 26%;
+  height: 75%;
   margin: 0 auto;
   text-align: center; }
 
 tr {
-  font-weight: 500; }
+  font-weight: 500;
+  height: calc(100% / 20); }
 
 tbody {
   font-family: avenir;
@@ -390,7 +395,6 @@ td#highName {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   padding: 5px 44px 0rem 49px;
   margin: 0;
   background: none;
@@ -418,8 +422,17 @@ i#rightArrow {
   i#rightArrow:hover {
     color: #468AC9; }
 
+div#leadWrap {
+  height: 100%; }
+
 div#images img {
   height: 220px; }
+div#images img#tomato {
+  height: 160px; }
+div#images img#endImg2 {
+  height: 245px; }
+div#images img#topDog {
+  height: 230px; }
 
 div#bannerWrapper {
   transform: translateY(18%); }
@@ -505,15 +518,17 @@ img#banner {
   font-size: 5.5rem;
   font-family: oswald;
   text-transform: uppercase;
-  margin: 20px 0; }
+  margin: 0px 0; }
 
 #leader {
   color: #12163F;
   font-family: oswald;
   margin: 0;
+  padding: 20px 0;
   font-family: oswald;
   text-transform: uppercase;
-  font-size: 4rem; }
+  font-size: 4rem;
+  text-align: center; }
 
 div#leadBtn {
   position: absolute;

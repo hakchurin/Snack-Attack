@@ -170,10 +170,10 @@ import _ from 'underscore'
 
 
             let hitTestPoint = (object) => {
-                if (this.player.center.x <= object.x - 90 || this.player.center.x >= object.x + 90) {
+                if (this.player.center.x <= object.x - 100 || this.player.center.x >= object.x + 100) {
                     return false;
 
-                } else if (object.y - 5 >= this.player.center.y - 25 && object.y - 5 <= this.player.center.y + 25) {
+                } else if (object.y - 50 >= this.player.center.y - 25 && object.y - 50 <= this.player.center.y + 25) {
                   this.levelUp.play();
                     return true;
                 } else {
@@ -192,7 +192,7 @@ import _ from 'underscore'
 
             let self = this;
             function reachedBottom(object,gameSize) {
-                if (object.y >= gameSize.y - 105) {
+                if (object.y >= gameSize.y - 110) {
                   self.miss.play();
                     return true;
                 } else {
@@ -271,7 +271,7 @@ import _ from 'underscore'
         increaseSpeed: function() {
           window.setInterval(() => {
           this.spawnRateOfDescent = this.spawnRateOfDescent * 1.2;
-          this.spawnRate = this.spawnRate * 0.99;
+          this.spawnRate = this.spawnRate * 0.95;
           },5000)
         }
     };
