@@ -43,7 +43,7 @@ button#restartBtn {
     color: #127DA7; }
 
 img#tomato {
-  height: 23vh; }
+  height: 165px; }
 
 #header {
   height: 135px;
@@ -419,7 +419,7 @@ i#rightArrow {
     color: #468AC9; }
 
 div#images img {
-  height: 150px; }
+  height: 220px; }
 
 div#bannerWrapper {
   transform: translateY(18%); }
@@ -616,7 +616,8 @@ p#backLogin {
     font-family: oswald;
     font-size: 2rem;
     color: #12163F;
-    margin-right: 100px; } }
+    margin-right: 100px;
+    margin: 0; } }
 @media screen and (max-width: 600px) {
   body {
     background-repeat: no-repeat;
@@ -645,7 +646,7 @@ p#backLogin {
     width: 5.5rem;
     height: 1.5rem;
     font-size: 0.7rem;
-    margin-top: 4.5rem; }
+    margin-top: 7rem; }
 
   p#timer {
     right: 15rem;
@@ -698,7 +699,8 @@ p#backLogin {
   p#highScore {
     font-size: 1.5rem;
     width: 100%;
-    color: #12163F; }
+    color: #12163F;
+    margin: 0; }
 
   p#high {
     font-size: 1.5rem; }

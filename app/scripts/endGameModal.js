@@ -15,10 +15,8 @@ function endGameModal(){
     <h1 id="gameOver"> Game Over </h1>
     <div id="images"> </div>
     <div id="scores">
-
       <p id="score">Your score was: </p>
       <p id="highScore">High Score:  </p>
-
     </div>
     <button id="restartBtn" value="Play Again"> Play Again </button>
     </div>
@@ -27,9 +25,6 @@ function endGameModal(){
 
 
   var image = endGameImages[Math.floor(Math.random() * endGameImages.length)];
-  console.log(image);
-  console.log(endGameImages);
-
   endModal.find(`#images`).append(`<img src="${image.url}"/>`);
 
 

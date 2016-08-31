@@ -88,7 +88,6 @@ import _ from 'underscore'
         $('#pause').on('click', () => {
             this.paused = true;
             this.audio.pause();
-
             clearInterval(this.countdown);
         })
 
@@ -96,7 +95,6 @@ import _ from 'underscore'
             this.paused = false;
             requestAnimationFrame(self.tick.bind(self));
             this.audio.play();
-
             self.startInterval();
         })
         this.StartOfGame();
@@ -112,9 +110,7 @@ import _ from 'underscore'
                 this.startInterval()
                 this.increaseSpeed();
                 this.audio.play();
-
                 requestAnimationFrame(this.tick.bind(this));
-
             })
             this.player.draw()
         },
@@ -175,9 +171,9 @@ import _ from 'underscore'
 
             let hitTestPoint = (object) => {
                 if (this.player.center.x <= object.x - 90 || this.player.center.x >= object.x + 90) {
-
                     return false;
-                } else if (object.y - 20 >= this.player.center.y - 15 && object.y - 20 <= this.player.center.y + 15) {
+
+                } else if (object.y - 5 >= this.player.center.y - 25 && object.y - 5 <= this.player.center.y + 25) {
                   this.levelUp.play();
                     return true;
                 } else {
@@ -185,7 +181,6 @@ import _ from 'underscore'
                 }
             }
             this.objects = this.objects.filter((object) => {
-
                 if (hitTestPoint(object)) {
                     this.score += 100;
                     $("#footerScore").text("Current Score: " + this.score);
@@ -197,7 +192,7 @@ import _ from 'underscore'
 
             let self = this;
             function reachedBottom(object,gameSize) {
-                if (object.y >= gameSize.y) {
+                if (object.y >= gameSize.y - 105) {
                   self.miss.play();
                     return true;
                 } else {
@@ -208,12 +203,10 @@ import _ from 'underscore'
                 if (reachedBottom(current, this.gameSize )) {
                     this.lives -= 1;
                     $("#lives").text("Lives: " + this.lives);
-
                     return false;
                 } else {
                     return true;
                 }
-
             })
 
 
@@ -235,7 +228,6 @@ import _ from 'underscore'
                   let highscore = fixedScore[0].get('score')
 
                   if ((this.score ) > highscore) {
-                    console.log('should be high score');
                     $('#images').empty().append('<img src="assets/images/topDog.svg" id="topDog"/>')
                   }
                 }
@@ -250,13 +242,18 @@ import _ from 'underscore'
                   username:session.get('username')
                 })
             }
-            if (this.lives === 0 || this.input === 0) {
-                cancelAnimationFrame(this.tick.bind(this));
-                $('#images').empty().append('<img src="assets/images/tomato.svg" id="tomato"/>')
 
+
+
+            if (this.input === 0 || this.lives === 0) {
+                cancelAnimationFrame(this.tick.bind(this));
                 endGame();
             } else if (this.lives !== 0 && this.input !== 0 && !this.paused) {
                 requestAnimationFrame(this.tick.bind(this));
+            }
+
+            if (this.lives === 0) {
+              $('#images').empty().append('<img src="assets/images/tomato.svg" id="tomato"/>')
             }
 
         },
@@ -274,7 +271,7 @@ import _ from 'underscore'
         increaseSpeed: function() {
           window.setInterval(() => {
           this.spawnRateOfDescent = this.spawnRateOfDescent * 1.2;
-          this.spawnRate = this.spawnRate * 0.95;
+          this.spawnRate = this.spawnRate * 0.99;
           },5000)
         }
     };

@@ -26,7 +26,6 @@ import highScoreView from './leaderboard';
       resetCanvas();
     },
     signUpFunction: function(){
-      console.log('signup func');
       $('#container').empty().append(signUpInfo());
     },
 
@@ -35,7 +34,6 @@ import highScoreView from './leaderboard';
 
     },
     gamefunction: function(){
-      console.log('hi');
       $('#container').empty().append(footerView());
       $('#container').append(startGameModal());
       $('#container').append(endGameModal());
