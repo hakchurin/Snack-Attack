@@ -1,4 +1,3 @@
-
 import $ from 'jquery';
 import Backbone from 'backbone';
 import router from './router';
@@ -7,8 +6,8 @@ import logoutInfo from './logout';
 
 
 
-        function footerView() {
-          let footer = $(`
+function footerView() {
+    let footer = $(`
             <div id="footer">
               <div id="wrapper">
                 <div id="volume">
@@ -29,12 +28,14 @@ import logoutInfo from './logout';
             </div>
             `);
 
-            footer.find('#wrapper').append(logoutInfo())
+    footer.find('#wrapper').append(logoutInfo())
 
-            footer.find('#leaderboard').on('click', function(){
-              router.navigate('leaderboard', {trigger:true});
-            })
+    footer.find('#leaderboard').on('click', function() {
+        router.navigate('leaderboard', {
+            trigger: true
+        });
+    })
 
-            return footer;
-        }
-        export default footerView;
+    return footer;
+}
+export default footerView;

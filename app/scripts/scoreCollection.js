@@ -5,11 +5,11 @@ import settings from './settings';
 
 
 const ScoreCollection = Backbone.Collection.extend({
-defaults: {
-  score: 0
-},
-  model: scoreModel,
-  url: `https://baas.kinvey.com/appdata/${settings.appId}/snackAttck`
+    defaults: {
+        score: 0
+    },
+    model: scoreModel,
+    url: `https://baas.kinvey.com/appdata/${settings.appId}/snackAttck`
 });
 
 let scoreCollection = new ScoreCollection();

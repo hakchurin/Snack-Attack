@@ -13,38 +13,38 @@ import highScoreView from './leaderboard';
 
 
 
-  const Router = Backbone.Router.extend({
+const Router = Backbone.Router.extend({
     routes: {
-      login: 'loginfunction',
-      signUp: 'signUpFunction',
-      game: 'gamefunction',
-      leaderboard: 'leaderboardFunction',
-      '/*': 'redirectFunction'
+        login: 'loginfunction',
+        signUp: 'signUpFunction',
+        game: 'gamefunction',
+        leaderboard: 'leaderboardFunction',
+        '/*': 'redirectFunction'
     },
-    loginfunction: function(){
-      $('#container').empty().append(loginInfo());
-      resetCanvas();
+    loginfunction: function() {
+        $('#container').empty().append(loginInfo());
+        resetCanvas();
     },
-    signUpFunction: function(){
-      $('#container').empty().append(signUpInfo());
+    signUpFunction: function() {
+        $('#container').empty().append(signUpInfo());
     },
 
-    leaderboardFunction: function(){
-      $('#container').empty().append(highScoreView());
+    leaderboardFunction: function() {
+        $('#container').empty().append(highScoreView());
 
     },
-    gamefunction: function(){
-      $('#container').empty().append(footerView());
-      $('#container').append(startGameModal());
-      $('#container').append(endGameModal());
-    var canvas= resetCanvas();
-    var game = new Game(canvas);
+    gamefunction: function() {
+        $('#container').empty().append(footerView());
+        $('#container').append(startGameModal());
+        $('#container').append(endGameModal());
+        var canvas = resetCanvas();
+        var game = new Game(canvas);
 
     },
-    redirectFunction: function(){
-      window.location.hash= 'game';
+    redirectFunction: function() {
+        window.location.hash = 'game';
     }
-  })
+})
 
 let router = new Router();
 

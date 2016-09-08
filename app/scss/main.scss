@@ -1,900 +1,789 @@
-//
 
 body {
-    // background-color: ivory;
     height: 100vh;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     background-image: url("assets/images/snackAttackKitchen.png");
     background-size: cover;
 }
-
-
-#score{
-  font-family: oswald;
-  font-size: 2rem;
-  color: #12163F;
-  margin-right: 100px;
+#score {
+    font-family: oswald;
+    font-size: 2rem;
+    color: #12163F;
+    margin-right: 100px;
 }
-
-
-h1{
-  font-family: oswald;
-font-size: 3rem;
-color: white;
+h1 {
+    font-family: oswald;
+    font-size: 3rem;
+    color: white;
     text-align: center;
 }
 .FinishScreen {
-  text-align: center;
-      width: 700px;
-      height: 500px;
-      border: 2px solid #127DA7;
-      background-color: white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -65%);
-
- }
-img#endImg2{
+    text-align: center;
+    width: 700px;
+    height: 500px;
+    border: 2px solid #127DA7;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+img#endImg2 {
     height: 215px;
 }
-
- button#restartBtn{
-   width: 9rem;
- height: 3.5rem;
- border-radius: 0.5rem;
- font-size: 1.5rem;
- font-family: avenir;
- background-color: #127DA7;
- color: white;
- border: 2px solid #127DA7;
- top: 27rem;
- position: absolute;
- left: 50%;
- transform: translate(-50%);
-
- &:hover {
-    background-color: white;
-    color:#127DA7;
+button#restartBtn {
+    width: 9rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid #127DA7;
+    top: 27rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    &:hover {
+        background-color: white;
+        color: #127DA7;
     }
- }
-
-
-
-#header{
-  height: 135px;
-  border: 2px solid;
 }
-
-#footer{
-  border: 2px solid #127DA7;
-height: 9rem;
-bottom: 0;
-width: 100%;
-display: flex;
-position: absolute;
-background: #127DA7;
-justify-content: space-between;
-align-items: center;
-padding: 0 20px;
-box-sizing: border-box;
+#header {
+    height: 135px;
+    border: 2px solid;
 }
-
+#footer {
+    border: 2px solid #127DA7;
+    height: 9rem;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    background: #127DA7;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 .StartScreen {
-  text-align: center;
-  width: 700px;
-  height: 500px;
-  border: 2px solid #127DA7;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-65%);
- }
-
-div#playPause {
-      transform: translateY(50%);
-}
-button#startBtn{
-  transform: translateY(75%);
-  width: 9rem;
-  height: 3.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  font-family: avenir;
-  background-color: #127DA7;
-  color: white;
-  border: 2px solid #127DA7;
-
- &:hover{
-     background-color: white;
-     color:#127DA7;
-     }
- }
-
-
- p#timer{
-
-     font-size: 2.5rem;
-     font-family: oswald;
-     color: white;
- }
-
- p#lives{
-font-size: 2.5rem;
-font-family: oswald;
-color: white;
- }
-
- p#footerScore{
-       margin-right: 5rem;
-     color: white;
-     font-family: oswald;
-     font-size: 2.5rem;
- }
-
- input#pause{
-   margin-top: 0rem;
- }
-
-.loginPage{
-  border: 2px solid #127DA7;
-  width: 40%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  align-items: center;
-}
-
-input#loginSubmit {
-  border-radius: 0.5rem;
-      height: 2rem;
-      width: 8rem;
-      font-size: 1rem;
-      font-family: avenir;
-      background-color: #127DA7;
-      color: white;
-      border: 2px solid #127DA7;
-      margin-bottom: 20px;
-&:hover{
+    text-align: center;
+    width: 700px;
+    height: 500px;
+    border: 2px solid #127DA7;
     background-color: white;
-    color:#127DA7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-65%);
+}
+div#playPause {
+    transform: translateY(50%);
+}
+button#startBtn {
+    transform: translateY(75%);
+    width: 9rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid #127DA7;
+    &:hover {
+        background-color: white;
+        color: #127DA7;
     }
 }
-
-input.username{
-  border-radius: .5rem;
-  height: 2rem;
-  width: 12rem;
-  background: #EAEAEA;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-family: avenir;
+p#timer {
+    font-size: 2.5rem;
+    font-family: oswald;
+    color: white;
 }
-
+p#lives {
+    font-size: 2.5rem;
+    font-family: oswald;
+    color: white;
+}
+p#footerScore {
+    margin-right: 5rem;
+    color: white;
+    font-family: oswald;
+    font-size: 2.5rem;
+}
+input#pause {
+    margin-top: 0;
+}
+.loginPage {
+    border: 2px solid #127DA7;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+input#loginSubmit {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid #127DA7;
+    margin-bottom: 20px;
+    &:hover {
+        background-color: white;
+        color: #127DA7;
+    }
+}
+input.username {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 12rem;
+    background: #EAEAEA;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: avenir;
+}
 input.password {
-  border-radius: .5rem;
-  height: 2rem;
-  width: 12rem;
-  background: #EAEAEA;
-  font-size: 1.5rem;
-  font-family: avenir;
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 12rem;
+    background: #EAEAEA;
+    font-size: 1.5rem;
+    font-family: avenir;
 }
-
 form.loginForm {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
-
 div#loginNav {
-align-items: center;
-flex-direction: column;
-display: flex;
-margin-top: 40px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-top: 40px;
 }
-
-h2#loginHead{
-  text-align: center;
-font-family: oswald;
-font-size: 3rem;
-color:#127DA7;
+h2#loginHead {
+    text-align: center;
+    font-family: oswald;
+    font-size: 3rem;
+    color: #127DA7;
 }
-
 ::-webkit-input-placeholder {
-  color: grey;
-  text-align: center;
+    color: grey;
+    text-align: center;
 }
-form.signUp{
-  display: flex;
-  flex-direction: column;
+form.signUp {
+    display: flex;
+    flex-direction: column;
 }
-
-
-#signInfo{
-  font-family: avenir;
+#signInfo {
+    font-family: avenir;
     font-size: 1rem;
 }
-
-div#signUp{
-  border: 2px solid #127DA7;
-  width: 40%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  align-items: center;
+div#signUp {
+    border: 2px solid #127DA7;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
 }
-
-input#signUpSubmit{
-  border-radius: 0.5rem;
-  height: 2rem;
-  width: 8rem;
-  font-size: 1rem;
-  font-family: avenir;
-  background-color: #127DA7;
-  color: white;
-  border: 2px solid #127DA7;
-  margin-top: 20px;
-&:hover{
-    background-color: white;
-    color:#127DA7;
-    }
-
-}
-input.name{
-border-radius: .5rem;
-height: 2rem;
-width: 12rem;
-background: #EAEAEA;
-font-size: 1.5rem;
-margin-bottom: 20px;
-font-family: avenir;
-}
-
-input.signUsername{
-  border-radius: .5rem;
-  height: 2rem;
-  width: 12rem;
-  background: #EAEAEA;
-  font-size: 1.5rem;
-  font-family: avenir;
-  margin-bottom: 20px;
-}
-
-input.signPassword {
-  border-radius: .5rem;
-  height: 2rem;
-  width: 12rem;
-  background: #EAEAEA;
-  font-size: 1.5rem;
-  font-family: avenir;
-
-}
-
-h3#name{
-      margin-left: 9rem;
-}
-
-h3#signUsername{
-  margin-left: 8rem;
-  position: absolute;
-  margin-top: 3.5rem;
-}
-
-h3#signPassword{
-  margin-left: 8rem;
-  position: absolute;
-  margin-top: 9.5rem;
-}
-
-h1#SignUp{
-  text-align: center;
-  font-family: oswald;
-  font-size: 3.5rem;
-  color:#127DA7;
-}
-
-input#leaderboard{
-  color: white;
-      border: 2px solid white;
-
-      color: white;
-      border-radius: 8px;
-      background-color: #127DA7;
-      border: 2px solid white;
-      height: 4rem;
-      width: 11rem;
-      font-size: 1.6rem;
-      font-family: oswald;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-&:hover{
-    background-color: white;
-    color:#127DA7;
-
-    }
-}
-
-button{
-  background: none;
-border: none;
-}
-i#pause{
-  font-size: 3rem;
-      color: white;
-
-}
-
-i#play{
-  font-size: 3rem;
+input#signUpSubmit {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
     color: white;
-
-}
-
-img#topDog{
-width: 30vw;
-
-}
-
-
-#fryingPan{
-  display:none;
-}
-
-input#logoutSubmit{
-  border-radius: 0.5rem;
-  height: 2rem;
-  width: 5rem;
-  font-size: 1rem;
-  font-family: avenir;
-  background-color: #127DA7;
-  color: white;
-  border: 2px solid white;
-  &:hover{
-      background-color: white;
-      color:#127DA7;
-      }
-}
-
-div#scores{
-  display: flex;
-justify-content: center;
-position: absolute;
-bottom: 4rem;
-width: 100%;
-}
-
-p#highScore{
-color: #12163F;
-  font-family: oswald;
-  font-size: 2rem;
-
-
-}
-
-p#high{
-  position: relative;
-  left: 7.5rem;
-  bottom: 4.6rem;
-}
-
-p#noSignUp{
-  margin-top: 15rem;
-  margin-left: 1.5rem;
-  font-family: avenir;
-}
-
-
-input#loginBtn{
-      border-radius: 0.5rem;
-      height: 2rem;
-      width: 5rem;
-      font-size: 1rem;
-      font-family: avenir;
-      background-color: #127DA7;
-      color: white;
-      border: 2px solid white;
-}
-
-
-button#backGame{
-
-  border-radius: 0.5rem;
-  height: 3rem;
-  width: 9rem;
-  font-size: 1rem;
-  font-family: avenir;
-  background-color: #127DA7;
-  color: white;
-  border: 2px solid #127DA7;
-    &:hover{
+    border: 2px solid #127DA7;
+    margin-top: 20px;
+    &:hover {
         background-color: white;
-        color:#127DA7;
-
-        }
+        color: #127DA7;
+    }
 }
-
-#leaderTitle{
-  color:#12163F;
+input.name {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 12rem;
+    background: #EAEAEA;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: avenir;
 }
-
-
-
-.highScore{
-  // border: 2px solid white;
+input.signUsername {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 12rem;
+    background: #EAEAEA;
+    font-size: 1.5rem;
+    font-family: avenir;
+    margin-bottom: 20px;
+}
+input.signPassword {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 12rem;
+    background: #EAEAEA;
+    font-size: 1.5rem;
+    font-family: avenir;
+}
+h3#name {
+    margin-left: 9rem;
+}
+h3#signUsername {
+    margin-left: 8rem;
+    position: absolute;
+    margin-top: 3.5rem;
+}
+h3#signPassword {
+    margin-left: 8rem;
+    position: absolute;
+    margin-top: 9.5rem;
+}
+h1#SignUp {
+    text-align: center;
+    font-family: oswald;
+    font-size: 3.5rem;
+    color: #127DA7;
+}
+input#leaderboard {
+    color: white;
+    border: 2px solid white;
+    color: white;
+    border-radius: 8px;
+    background-color: #127DA7;
+    border: 2px solid white;
+    height: 4rem;
+    width: 11rem;
+    font-size: 1.6rem;
+    font-family: oswald;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    &:hover {
+        background-color: white;
+        color: #127DA7;
+    }
+}
+button {
+    background: none;
+    border: none;
+}
+i#pause {
+    font-size: 3rem;
+    color: white;
+}
+i#play {
+    font-size: 3rem;
+    color: white;
+}
+img#topDog {
+    width: 30vw;
+}
+#fryingPan {
+    display: none;
+}
+input#logoutSubmit {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid white;
+    &:hover {
+        background-color: white;
+        color: #127DA7;
+    }
+}
+div#scores {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 4rem;
+    width: 100%;
+}
+p#highScore {
+    color: #12163F;
+    font-family: oswald;
+    font-size: 2rem;
+}
+p#high {
+    position: relative;
+    left: 7.5rem;
+    bottom: 4.6rem;
+}
+p#noSignUp {
+    margin-top: 15rem;
+    margin-left: 1.5rem;
+    font-family: avenir;
+}
+input#loginBtn {
+    border-radius: 0.5rem;
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid white;
+}
+button#backGame {
+    border-radius: 0.5rem;
+    height: 3rem;
+    width: 9rem;
+    font-size: 1rem;
+    font-family: avenir;
+    background-color: #127DA7;
+    color: white;
+    border: 2px solid #127DA7;
+    &:hover {
+        background-color: white;
+        color: #127DA7;
+    }
+}
+#leaderTitle {
+    color: #12163F;
+}
+.highScore {
+    // border: 2px solid white;
     background: radial-gradient(ellipse farthest-corner at center top, #2196F3 0%, #fdf4a1 100%);
-height: 107vh;
+    height: 107vh;
 }
-
-
-
-thead{
-      text-align: center;
-      font-family: oswald;
+thead {
+    text-align: center;
+    font-family: oswald;
 }
-
 table {
-  box-shadow: 0 7px 52px #121940;
-  color: #fff;
-  background: #127da7;
-  width: 26%;
-  height: 75%;
-  margin: 0 auto;
-  text-align: center;
+    box-shadow: 0 7px 52px #121940;
+    color: #fff;
+    background: #127da7;
+    width: 26%;
+    height: 75%;
+    margin: 0 auto;
+    text-align: center;
 }
-
-
-tr{
-  font-weight: 500;
-  height:calc(100% / 20);
+tr {
+    font-weight: 500;
+    height: calc(100% / 20);
 }
-
-tbody{
-  font-family: avenir;
-  font-size: 14px;
-  cursor: pointer;
-
-  :hover{
-    background: #468AC9;
-     transform: scaleX(1.2) scaleY(1.5);
-     transition:  width 1s, height 1s, font 0.3s,  transform 1s;
-
-
-  }
+tbody {
+    font-family: avenir;
+    font-size: 14px;
+    cursor: pointer;
+    :hover {
+        background: #468AC9;
+        transform: scaleX(1.2) scaleY(1.5);
+        transition: width 1s, height 1s, font 0.3s, transform 1s;
+    }
 }
-
-
-td#numbers{
-  border: 2px solid white;
+td#numbers {
+    border: 2px solid white;
     background: white;
     color: #127DA7;
-    :hover{
-      background: #d7514d;
+    :hover {
+        background: #d7514d;
     }
 }
-
-      td#highName {
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        // height: 100%;
-        padding: 5px 44px 0rem 49px;
-        margin: 0;
-        background: none;
-        color: white;
-
-      }
-
-
-
-#volUp{
-  font-size: 2rem;
-display: none;
-  color: #12163F;
-
-
+td#highName {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: 100%;
+    padding: 5px 44px 0 49px;
+    margin: 0;
+    background: none;
+    color: white;
 }
-
-#volOff{
-  font-size: 2rem;
-display: none;
-color:#12163F;
+#volUp {
+    font-size: 2rem;
+    display: none;
+    color: #12163F;
 }
-
-
-
-
-i#leftArrow{
-  font-size: 3.5rem;
-
-  color: #12163F;
-    &:hover{
-      color:#468AC9;
-    }
+#volOff {
+    font-size: 2rem;
+    display: none;
+    color: #12163F;
 }
-
-i#rightArrow{
-  color: #12163F;
+i#leftArrow {
     font-size: 3.5rem;
-
-  &:hover{
-    color:#468AC9;
-  }
-
+    color: #12163F;
+    &:hover {
+        color: #468AC9;
+    }
 }
-
+i#rightArrow {
+    color: #12163F;
+    font-size: 3.5rem;
+    &:hover {
+        color: #468AC9;
+    }
+}
 div#leadWrap {
-      height: 100%;
+    height: 100%;
 }
-
-div#images{
-  img {
-    height: 220px;
-  }
-  img#tomato{
-    height: 160px;
-  }
-  img#endImg2{
-    height:245px;
-  }
-  img#topDog{
-    height: 230px;
-  }
+div#images {
+    img {
+        height: 220px;
+    }
+    img#tomato {
+        height: 160px;
+    }
+    img#endImg2 {
+        height: 245px;
+    }
+    img#topDog {
+        height: 230px;
+    }
 }
-
-div#bannerWrapper{
-  transform: translateY(18%);
+div#bannerWrapper {
+    transform: translateY(18%);
 }
-img#banner{
-  height: 60%;
-  width: 70%;
+img#banner {
+    height: 60%;
+    width: 70%;
 }
-
 @-webkit-keyframes shake {
-             0% { -webkit-transform:         translate(2px, 1px) rotate(0deg); }
-             10% { -webkit-transform:     translate(-1px, -2px) rotate(-2deg); }
-             20% { -webkit-transform:     translate(-3px, 0px) rotate(3deg); }
-             30% { -webkit-transform:     translate(0px, 2px) rotate(0deg); }
-             40% { -webkit-transform:     translate(1px, -1px) rotate(1deg); }
-             50% { -webkit-transform:     translate(-1px, 2px) rotate(-1deg); }
-             60% { -webkit-transform:     translate(-3px, 1px) rotate(0deg); }
-             70% { -webkit-transform:     translate(2px, 1px) rotate(-2deg); }
-             80% { -webkit-transform:     translate(-1px, -1px) rotate(4deg); }
-             90% { -webkit-transform:     translate(2px, 2px) rotate(0deg); }
-             100% { -webkit-transform:     translate(1px, -2px) rotate(-1deg); }
-         }
+    0% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+    }
+    10% {
+        -webkit-transform: translate(-1px, -2px) rotate(-2deg);
+    }
+    20% {
+        -webkit-transform: translate(-3px, 0px) rotate(3deg);
+    }
+    30% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+    }
+    40% {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        -webkit-transform: translate(2px, 1px) rotate(-2deg);
+    }
+    80% {
+        -webkit-transform: translate(-1px, -1px) rotate(4deg);
+    }
+    90% {
+        -webkit-transform: translate(2px, 2px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
 #leftArrow:hover {
-             -webkit-animation-name:shake;
-             -webkit-animation-duration:0.8s;
-             -webkit-animation-iteration-count:infinite;
-             -webkit-animation-timing-function:linear;
-             -webkit-transform-origin:50% 100%;
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform-origin: 50% 100%;
 }
-
-
 @-webkit-keyframes shake {
-             0% { -webkit-transform:         translate(2px, 1px) rotate(0deg); }
-             10% { -webkit-transform:     translate(-1px, -2px) rotate(-2deg); }
-             20% { -webkit-transform:     translate(-3px, 0px) rotate(3deg); }
-             30% { -webkit-transform:     translate(0px, 2px) rotate(0deg); }
-             40% { -webkit-transform:     translate(1px, -1px) rotate(1deg); }
-             50% { -webkit-transform:     translate(-1px, 2px) rotate(-1deg); }
-             60% { -webkit-transform:     translate(-3px, 1px) rotate(0deg); }
-             70% { -webkit-transform:     translate(2px, 1px) rotate(-2deg); }
-             80% { -webkit-transform:     translate(-1px, -1px) rotate(4deg); }
-             90% { -webkit-transform:     translate(2px, 2px) rotate(0deg); }
-             100% { -webkit-transform:     translate(1px, -2px) rotate(-1deg); }
-         }
+    0% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+    }
+    10% {
+        -webkit-transform: translate(-1px, -2px) rotate(-2deg);
+    }
+    20% {
+        -webkit-transform: translate(-3px, 0px) rotate(3deg);
+    }
+    30% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+    }
+    40% {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        -webkit-transform: translate(2px, 1px) rotate(-2deg);
+    }
+    80% {
+        -webkit-transform: translate(-1px, -1px) rotate(4deg);
+    }
+    90% {
+        -webkit-transform: translate(2px, 2px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
 #rightArrow:hover {
-             -webkit-animation-name:shake;
-             -webkit-animation-duration:0.8s;
-             -webkit-animation-iteration-count:infinite;
-             -webkit-animation-timing-function:linear;
-             -webkit-transform-origin:50% 100%;
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform-origin: 50% 100%;
 }
-
-
-
-
 #snackAttack {
-  transform: translateY(10%);
-  font-family: overmuch;
-  color: #127DA7;
-  font-size: 5.5rem;
-  margin: 0 auto;
+    transform: translateY(10%);
+    font-family: overmuch;
+    color: #127DA7;
+    font-size: 5.5rem;
+    margin: 0 auto;
 }
-
-
-#instructions{
-
-  color: #127DA7;
-  font-family: avenir;
-  font-weight: 500;
+#instructions {
+    color: #127DA7;
+    font-family: avenir;
+    font-weight: 500;
 }
-
-
-#gameOver{
-  color: #127DA7;
-  font-size: 5.5rem;
-  font-family: oswald;
-  text-transform: uppercase;
-  margin: 0px 0;
+#gameOver {
+    color: #127DA7;
+    font-size: 5.5rem;
+    font-family: oswald;
+    text-transform: uppercase;
+    margin: 0;
 }
-
-#leader{
-  color: #12163F;
-  font-family: oswald;
-  margin: 0;
-  padding: 10px 0;
-  font-family: oswald;
-  text-transform: uppercase;
-  font-size: 4rem;
-  text-align: center;
+#leader {
+    color: #12163F;
+    font-family: oswald;
+    margin: 0;
+    padding: 10px 0;
+    font-family: oswald;
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: center;
 }
-
-div#leadBtn{
+div#leadBtn {
     position: absolute;
     bottom: 2rem;
     left: 6rem;
 }
-
-p#backLogin{
-  font-family: avenir;
-  text-align: center;
+p#backLogin {
+    font-family: avenir;
+    text-align: center;
 }
-
 #settings {
-  display: flex;
+    display: flex;
 }
-
-@media screen and (max-width: 750px){
-
-  body{
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  #footer{
-    background-color: #127DA7;
-    width:100%;
-  }
-  input#logoutSubmit{
-    height: 1.5rem;
-    width: 4rem;
-    font-size: 0.8rem;
-  }
-  input#leaderboard{
-    width: 6.5rem;
-    height: 2.5rem;
-    font-size: .9rem;
-
-  }
-  p#timer{
-    right: 19rem;
-  font-size: 1.5rem;
-  }
-  p#footerScore{
-  font-size: 1.5rem;
-  width: 6rem;
-  }
-  p#lives{
-  font-size: 1.5rem;
-  }
-  .StartScreen{
-    width: 80%;
-    height: 55%;
-  }
-  #snackAttack{
-    font-size: 2.5rem;
-  left: 2rem;
-  margin-bottom: 29px;
-  margin-top: 7px;
-  }
-  div#bannerWrapper {
-    margin-bottom: 17px;
+@media screen and (max-width: 750px) {
+    body {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
-  #instructions{
-    padding: 0;
-  font-size: 1rem;
-  margin: 0 auto;
-  }
-  i#leftArrow{
-    font-size: 3rem;
-
-  }
-  i#rightArrow{
-    font-size: 3rem;
-
-  }
-  button#startBtn{
-    width: 8rem;
-  height: 3rem;
-  font-size: 1rem;
-
-  }
-  #instructions{
-    font-size: 1rem;
-right: 2rem;
-margin-left: 3rem;
-  }
-  input#signUpSubmit{
-    width: 6rem;
-
-  }
-
-
-
-  .FinishScreen{
-    width: 80%;
-    margin: 0 auto;
-  }
-  #gameOver{
-    font-size: 4rem;
-    left: 5.5rem;
-  }
-
-  p#highScore{
-    font-size: 1.5rem;
-    width: 100%;
-    color: #12163F;
-  }
-  p#high{
-    font-family: oswald;
-      font-size: 1.5rem;
-  }
-
-  #score{
-      font-family: oswald;
-      font-size: 2rem;
-      color: #12163F;
-      margin-right: 100px;
-      margin: 0;
-  }
+    #footer {
+        background-color: #127DA7;
+        width: 100%;
+    }
+    input#logoutSubmit {
+        height: 1.5rem;
+        width: 4rem;
+        font-size: 0.8rem;
+    }
+    input#leaderboard {
+        width: 6.5rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+    p#timer {
+        right: 19rem;
+        font-size: 1.5rem;
+    }
+    p#footerScore {
+        font-size: 1.5rem;
+        width: 6rem;
+    }
+    p#lives {
+        font-size: 1.5rem;
+    }
+    .StartScreen {
+        width: 80%;
+        height: 55%;
+    }
+    #snackAttack {
+        font-size: 2.5rem;
+        left: 2rem;
+        margin-bottom: 29px;
+        margin-top: 7px;
+    }
+    div#bannerWrapper {
+        margin-bottom: 17px;
+    }
+    #instructions {
+        padding: 0;
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+    i#leftArrow {
+        font-size: 3rem;
+    }
+    i#rightArrow {
+        font-size: 3rem;
+    }
+    button#startBtn {
+        width: 8rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+    #instructions {
+        font-size: 1rem;
+        right: 2rem;
+        margin-left: 3rem;
+    }
+    input#signUpSubmit {
+        width: 6rem;
+    }
+    .FinishScreen {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #gameOver {
+        font-size: 4rem;
+        left: 5.5rem;
+    }
+    p#highScore {
+        font-size: 1.5rem;
+        width: 100%;
+        color: #12163F;
+    }
+    p#high {
+        font-family: oswald;
+        font-size: 1.5rem;
+    }
+    #score {
+        font-family: oswald;
+        font-size: 2rem;
+        color: #12163F;
+        margin: 0;
+    }
 }
-
-@media screen and (max-width: 600px){
-  body {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  #footer {
-    background-color: #127DA7;
-    width:100%;
-  }
-
-i#pause {
-  font-size: 2rem;
-  color: white;
-}
-
-i#play {
-  font-size: 2rem;
-  color: white;
-}
-
-  input#logoutSubmit{
-    width: 5.5rem;
-  height: 1.5rem;
-  margin: 10px;
-  font-size: 0.7rem;
-  }
-  input#leaderboard{
-    width: 5.5rem;
-  height: 1.5rem;
-  font-size: 0.7rem;
-  margin-top: 7rem;
-  }
-  p#timer{
-    right: 15rem;
-font-size: 1rem;
-  }
-  p#footerScore{
-    font-size: 1rem;
-  width: 5rem;
-
-  }
-  p#lives{
-    right: 2.5rem;
-  font-size: 1rem;
-  }
-.StartScreen {
-  width: 23rem;
-right: 1rem;
-}
-
-
-#settings {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0%;
-  margin: 50px;
-}
-#snackAttack {
-  font-size: 2.5rem;
-}
-#instructions {
-  font-size:1rem;
-  margin-right: 3rem;
-}
-
-i#leftArrow {
-  font-size: 3.5rem;
-}
-
-i#rightArrow {
-  font-size: 3.5rem;
-
-}
-button#startBtn{
-  width: 7rem;
-      height: 3rem;
-      font-size: 1rem;
-
-}
-.FinishScreen{
-  width: 23rem;
-  right: 1rem;
-}
-#gameOver{
-  font-size: 4rem;
-  left: 2.5rem;
-}
-
-p#highScore{
-    font-size: 1.5rem;
-    width: 100%;
-    color: #12163F;
-    margin: 0;
-}
-
-p#high{
-font-size: 1.5rem;
-}
-
-#score {
-font-size: 1.5rem;
-}
-
-
-
-
-#leader{
-  color: #12163F;
-  font-family: oswald;
-  text-align: center;
-  font-size: 3.5rem;
-  margin-top: 2rem;
-}
-
-div#leadBtn {
-      text-align: center;
-}
-
-button#backGame {
-  height: 2rem;
-  width: 8rem;
-  text-align: center;
-  transform: translateY(75%);
-  margin-left: 2.5rem;
-}
-
-
-
-img#tomato {
-  height: 150px;
-
-}
+@media screen and (max-width: 600px) {
+    body {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    #footer {
+        background-color: #127DA7;
+        width: 100%;
+    }
+    i#pause {
+        font-size: 2rem;
+        color: white;
+    }
+    i#play {
+        font-size: 2rem;
+        color: white;
+    }
+    input#logoutSubmit {
+        width: 5.5rem;
+        height: 1.5rem;
+        margin: 10px;
+        font-size: 0.7rem;
+    }
+    input#leaderboard {
+        width: 5.5rem;
+        height: 1.5rem;
+        font-size: 0.7rem;
+        margin-top: 7rem;
+    }
+    p#timer {
+        right: 15rem;
+        font-size: 1rem;
+    }
+    p#footerScore {
+        font-size: 1rem;
+        width: 5rem;
+    }
+    p#lives {
+        right: 2.5rem;
+        font-size: 1rem;
+    }
+    .StartScreen {
+        width: 23rem;
+        right: 1rem;
+    }
+    #settings {
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+    }
+    #snackAttack {
+        font-size: 2.5rem;
+    }
+    #instructions {
+        font-size: 1rem;
+        margin-right: 3rem;
+    }
+    i#leftArrow {
+        font-size: 3.5rem;
+    }
+    i#rightArrow {
+        font-size: 3.5rem;
+    }
+    button#startBtn {
+        width: 7rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+    .FinishScreen {
+        width: 23rem;
+        right: 1rem;
+    }
+    #gameOver {
+        font-size: 4rem;
+        left: 2.5rem;
+    }
+    p#highScore {
+        font-size: 1.5rem;
+        width: 100%;
+        color: #12163F;
+        margin: 0;
+    }
+    p#high {
+        font-size: 1.5rem;
+    }
+    #score {
+        font-size: 1.5rem;
+    }
+    #leader {
+        color: #12163F;
+        font-family: oswald;
+        text-align: center;
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+    div#leadBtn {
+        text-align: center;
+    }
+    button#backGame {
+        height: 2rem;
+        width: 8rem;
+        text-align: center;
+        transform: translateY(75%);
+        margin-left: 2.5rem;
+    }
+    img#tomato {
+        height: 150px;
+    }
 }

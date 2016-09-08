@@ -11,14 +11,14 @@ import FallingObject from './fallingObj';
 
 
 function resetCanvas() {
-  var canvas = document.getElementById("screen");
-  var ctx= canvas.getContext("2d");
+    var canvas = document.getElementById("screen");
+    var ctx = canvas.getContext("2d");
 
-  canvas.width = $(window).width();
-  canvas.height = $(window).height() - 100;
+    canvas.width = $(window).width();
+    canvas.height = $(window).height() - 100;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  return canvas;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    return canvas;
 }
 
 

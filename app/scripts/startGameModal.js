@@ -1,5 +1,3 @@
-
-
 import $ from 'jquery';
 import Backbone from 'backbone';
 
@@ -7,8 +5,8 @@ import Backbone from 'backbone';
 
 
 
-function startGameModal(){
-  let startModal = $(`
+function startGameModal() {
+    let startModal = $(`
     <div class="StartScreen" style="display:none">
     <h1 id="snackAttack"> Snack Attack </h1>
 
@@ -26,7 +24,7 @@ function startGameModal(){
     </div>
     `);
 
-    
+
     return startModal;
 }
 export default startGameModal;

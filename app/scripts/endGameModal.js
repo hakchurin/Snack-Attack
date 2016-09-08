@@ -9,8 +9,8 @@ import endGameImages from './endGameArray';
 
 
 
-function endGameModal(){
-  let endModal = $(`
+function endGameModal() {
+    let endModal = $(`
     <div class="FinishScreen" style="display:none">
     <h1 id="gameOver"> Game Over </h1>
     <div id="images"> </div>
@@ -24,27 +24,22 @@ function endGameModal(){
 
 
 
-  var image = endGameImages[Math.floor(Math.random() * endGameImages.length)];
-  endModal.find(`#images`).append(`<img src="${image.url}" id="endImg${image.id}"/>`);
+    var image = endGameImages[Math.floor(Math.random() * endGameImages.length)];
+    endModal.find(`#images`).append(`<img src="${image.url}" id="endImg${image.id}"/>`);
 
 
     scoreCollection.fetch({
-      success: function(r){
-        let fixedScore = _.sortBy(r.models,function(score){
-          return score.get('score');
-        })
-          fixedScore = fixedScore.reverse();
-          fixedScore = fixedScore.slice(0,1);
-          fixedScore.forEach(function(score) {
-            endModal.find('#highScore').html(`High Score: ${score.get('score')}`)
+        success: function(r) {
+            let fixedScore = _.sortBy(r.models, function(score) {
+                return score.get('score');
+            })
+            fixedScore = fixedScore.reverse();
+            fixedScore = fixedScore.slice(0, 1);
+            fixedScore.forEach(function(score) {
+                endModal.find('#highScore').html(`High Score: ${score.get('score')}`)
 
-
-            // let highScore = $(`<p id="high">${score.get('score')}</p>`)
-            // console.log(score.get('score'));
-            // endModal.find('#wrapper').append(highScore);
-          })
-
-      }
+            })
+        }
     });
 
     return endModal;
