@@ -1,8 +1,10 @@
 
 
-
-
 //FINAL PROJECT
+
+
+http://snack-attack.surge.sh/#game
+
 
 //PITCH -- For my final project I want to create a computer/application game that is classic, timeless, and approachable. It's a game everyone has seen or maybe even have played before, but the beauty behind it will be its simplicity and ability to attract many people. I want to create a game that will have objects falling from the sky and the player will catch the falling objects when they get to the bottom of the screen. It will most likely be "falling food" and the player will have to catch the food in a "basket". (falling objects are subject to change on how creative i get). I want to create a game that is easy to play and is a "stress reliever" something that doesn't use a lot of brain power, but controls the brain. (as in, I never want to put down this game!). And I'll be honest, Im not the greatest coder here, so I'm really shooting for something I know I can complete and master. Master the basics of functionality and styling. And with this project idea I think it'll covers a lot of basics that we went over this cohort, and with doing so I will be able to showcase my skills and abilities.
 
