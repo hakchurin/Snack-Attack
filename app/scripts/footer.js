@@ -19,8 +19,8 @@ function footerView() {
               </div>
 
               <input type="submit" id="leaderboard" name="Leaderboard" value="Leaderboard">
-              <p id="timer"></p>
               <div id="settings">
+                <p id="timer"></p>
                 <p id ="footerScore">Current score: </p>
                 <p id= "lives"> </p>
               </div>

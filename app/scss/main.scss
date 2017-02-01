@@ -97,6 +97,13 @@ button#startBtn {
         color: #127DA7;
     }
 }
+
+div#settings{
+  display: flex;
+justify-content: space-around;
+width: 58rem;
+}
+
 p#timer {
     font-size: 2.5rem;
     font-family: oswald;
@@ -271,7 +278,7 @@ input#leaderboard {
     border: 2px solid white;
     height: 4rem;
     width: 11rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-family: oswald;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -603,7 +610,7 @@ p#backLogin {
     input#leaderboard {
         width: 6.5rem;
         height: 2.5rem;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     p#timer {
         right: 19rem;
@@ -704,7 +711,7 @@ p#backLogin {
     input#leaderboard {
         width: 5.5rem;
         height: 1.5rem;
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         margin-top: 7rem;
     }
     p#timer {

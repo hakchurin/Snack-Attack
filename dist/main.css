@@ -94,6 +94,11 @@ button#startBtn {
     background-color: white;
     color: #127DA7; }
 
+div#settings {
+  display: flex;
+  justify-content: space-around;
+  width: 58rem; }
+
 p#timer {
   font-size: 2.5rem;
   font-family: oswald;
@@ -111,7 +116,7 @@ p#footerScore {
   font-size: 2.5rem; }
 
 input#pause {
-  margin-top: 0rem; }
+  margin-top: 0; }
 
 .loginPage {
   border: 2px solid #127DA7;
@@ -141,7 +146,7 @@ input#loginSubmit {
     color: #127DA7; }
 
 input.username {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
@@ -150,7 +155,7 @@ input.username {
   font-family: avenir; }
 
 input.password {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
@@ -213,7 +218,7 @@ input#signUpSubmit {
     color: #127DA7; }
 
 input.name {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
@@ -222,7 +227,7 @@ input.name {
   font-family: avenir; }
 
 input.signUsername {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
@@ -231,7 +236,7 @@ input.signUsername {
   margin-bottom: 20px; }
 
 input.signPassword {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 2rem;
   width: 12rem;
   background: #EAEAEA;
@@ -266,9 +271,9 @@ input#leaderboard {
   border: 2px solid white;
   height: 4rem;
   width: 11rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: oswald;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase; }
   input#leaderboard:hover {
     background-color: white;
@@ -381,7 +386,7 @@ tbody {
   tbody :hover {
     background: #468AC9;
     transform: scaleX(1.2) scaleY(1.5);
-    transition: width 1s, height 1s, font 0.3s,  transform 1s; }
+    transition: width 1s, height 1s, font 0.3s, transform 1s; }
 
 td#numbers {
   border: 2px solid white;
@@ -395,7 +400,7 @@ td#highName {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 5px 44px 0rem 49px;
+  padding: 5px 44px 0 49px;
   margin: 0;
   background: none;
   color: white; }
@@ -518,7 +523,7 @@ img#banner {
   font-size: 5.5rem;
   font-family: oswald;
   text-transform: uppercase;
-  margin: 0px 0; }
+  margin: 0; }
 
 #leader {
   color: #12163F;
@@ -560,7 +565,7 @@ p#backLogin {
   input#leaderboard {
     width: 6.5rem;
     height: 2.5rem;
-    font-size: .9rem; }
+    font-size: 0.7rem; }
 
   p#timer {
     right: 19rem;
@@ -631,7 +636,6 @@ p#backLogin {
     font-family: oswald;
     font-size: 2rem;
     color: #12163F;
-    margin-right: 100px;
     margin: 0; } }
 @media screen and (max-width: 600px) {
   body {
@@ -660,7 +664,7 @@ p#backLogin {
   input#leaderboard {
     width: 5.5rem;
     height: 1.5rem;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     margin-top: 7rem; }
 
   p#timer {
@@ -682,7 +686,6 @@ p#backLogin {
   #settings {
     display: flex;
     flex-direction: column;
-    margin-top: 0%;
     margin: 50px; }
 
   #snackAttack {

@@ -16,6 +16,7 @@ function Game(canvas) {
         x: canvas.width,
         y: canvas.height
     };
+
     this.ctx = canvas.getContext("2d");
     this.canvas = canvas;
     this.player = new fillCanvas(this.ctx, this.gameSize, this);
@@ -32,10 +33,6 @@ function Game(canvas) {
     this.audio = new Audio('assets/sound/snackAttackMusic.mp3');
     this.levelUp = new Audio('assets/sound/levelUp.mp3');
     this.miss = new Audio('assets/sound/miss.mp3');
-
-
-
-
     scoreCollection.fetch();
 
     $("#timer").text("Time: " + this.calculateTime(this.input));
@@ -43,111 +40,100 @@ function Game(canvas) {
     $("#lives").text("Lives: " + this.lives);
     $('#restartBtn').on('click', function() {
 
-        $('startGameModal').hide();
-        router.gamefunction();
-
-    })
-
+    $('startGameModal').hide();
+    router.gamefunction();
+    });
 
     $('#volUp').on('click', () => {
-        this.audio.play();
-    })
+      this.audio.play();
+    });
     $('#volOff').on('click', () => {
-        this.audio.pause();
-    })
+      this.audio.pause();
+    });
 
     $('#volOff').show();
     $('#volOff').click(function() {
 
+    var $this = $(this);
+    $this.toggleClass('active');
+    if ($this.hasClass('active')) {
 
-        var $this = $(this);
-        $this.toggleClass('active');
-        if ($this.hasClass('active')) {
+        $('#volUp').show();
+        $('#volOff').hide();
+    } else {
+        $('#volUp').hide();
+    }
+  });
 
-            $('#volUp').show();
-            $('#volOff').hide();
+  $('#volUp').click(function() {
+    var $this = $(this);
+    $this.toggleClass('active');
 
-        } else {
-            $('#volUp').hide();
-        }
-    });
+    if ($this.hasClass('active')) {
+      $('#volUp').hide();
+      $('#volOff').show();
+    } else {
+      $('#volUp').show();
+    }
+  });
 
-    $('#volUp').click(function() {
-        var $this = $(this);
-        $this.toggleClass('active');
-        if ($this.hasClass('active')) {
+  $('#pause').on('click', () => {
+      this.paused = true;
+      this.audio.pause();
+      clearInterval(this.countdown);
+  });
 
-            $('#volUp').hide();
-            $('#volOff').show();
-        } else {
-            $('#volUp').show();
-        }
-    });
+  $('#play').on('click', () => {
+      this.paused = false;
+      requestAnimationFrame(self.tick.bind(self));
+      this.audio.play();
+      self.startInterval();
+  });
 
-
-
-
-    $('#pause').on('click', () => {
-        this.paused = true;
-        this.audio.pause();
-        clearInterval(this.countdown);
-    })
-
-    $('#play').on('click', () => {
-        this.paused = false;
-        requestAnimationFrame(self.tick.bind(self));
-        this.audio.play();
-        self.startInterval();
-    })
-    this.StartOfGame();
+  this.StartOfGame();
 }
 
 Game.prototype = {
-    StartOfGame: function() {
-        $("#screen").hide();
-        $(".StartScreen").show();
-        $('#startBtn').on('click', () => {
-            $(".StartScreen").hide();
-            $("#screen").show();
-            this.startInterval()
-            this.increaseSpeed();
-            this.audio.play();
-            requestAnimationFrame(this.tick.bind(this));
-        })
-        this.player.draw()
-    },
-    calculateTime: function(timer) {
-        var mins = Math.floor(timer / 60);
-        var secs = timer % 60;
-        var time = (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
-        return time;
-    },
+  StartOfGame: function() {
+    $("#screen").hide();
+    $(".StartScreen").show();
+    $('#startBtn').on('click', () => {
+      $(".StartScreen").hide();
+      $("#screen").show();
+      this.startInterval();
+      this.increaseSpeed();
+      this.audio.play();
+      requestAnimationFrame(this.tick.bind(this));
+    });
 
-    startInterval: function() {
+  this.player.draw();
+},
+calculateTime: function(timer) {
+  var mins = Math.floor(timer / 60);
+  var secs = timer % 60;
+  var time = (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+  return time;
+},
 
+startInterval: function() {
+  $("#timer").text("Time: " + this.calculateTime(this.input));
 
-        $("#timer").text("Time: " + this.calculateTime(this.input));
+  this.countdown = setInterval(() => {
+    this.input -= 1;
+    var data = this.calculateTime(this.input)
+    if (this.input > 0 && this.lives > 0) {
+        $("#timer").text("Time: " + data);
+    } else if (this.input > 0) {
+        $("#timer").text("Time: " + data);
+        $("#timer").text("LOST!")
 
-        this.countdown = setInterval(() => {
-            this.input -= 1;
-            var data = this.calculateTime(this.input)
-            if (this.input > 0 && this.lives > 0) {
-                $("#timer").text("Time: " + data);
-            } else if (this.input > 0) {
-                $("#timer").text("Time: " + data);
-                $("#timer").text("LOST!")
-
-                clearInterval(this.countdown);
-            } else {
-                $("#timer").text("TIMES UP!")
-
-
-                clearInterval(this.countdown);
-            }
-        }, 1000);
-    },
-
-
+        clearInterval(this.countdown);
+    } else {
+        $("#timer").text("TIMES UP!")
+        clearInterval(this.countdown);
+    }
+  }, 1000);
+},
 
     tick: function() {
         this.time = Date.now();
@@ -210,7 +196,7 @@ Game.prototype = {
             } else {
                 return true;
             }
-        })
+        });
 
 
 
@@ -243,7 +229,7 @@ Game.prototype = {
             scoreCollection.create({
                 score: this.score,
                 username: session.get('username')
-            })
+            });
         }
 
 

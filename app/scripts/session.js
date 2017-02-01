@@ -64,7 +64,8 @@ const Session = Backbone.Model.extend({
                url: `https://baas.kinvey.com/user/${settings.appId}/_logout`,
 
               
-        })   localStorage.removeItem('authtoken')   this.clear()   store.settings.history.push('login') 
+        })  
+         localStorage.removeItem('authtoken'),   this.clear(),   store.settings.history.push('login') 
     },
 });
 
